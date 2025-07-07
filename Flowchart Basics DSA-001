@@ -1,15 +1,20 @@
+# 📘 DSA-001: Flowchart Basics
+
+## 🧠 Definition:
 What are Flowcharts? – Notes for Copy
 Definition:
 A flowchart is a diagram that shows the step-by-step flow of a program using symbols.
 
 Why Use?
 
-Easy to understand logic
+Easy-to-understand logic
 
 Helps in planning before coding
 
 Great for beginners
 
+
+## 🔻 Components of Flowchart:
 Main Symbols:
 
 | Symbol Shape     | Name           | Example in Class       | Purpose                       |
@@ -21,7 +26,7 @@ Main Symbols:
 | ➡ Arrow          | Flow Arrow     | →                      | Shows the direction of steps  |
 
 
-Example Flow:
+## 🔄 Example Flow: 📝 Pseudocode:
 
 Start  
 ↓  
