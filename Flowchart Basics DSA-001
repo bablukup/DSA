@@ -1,0 +1,34 @@
+What are Flowcharts? – Notes for Copy
+Definition:
+A flowchart is a diagram that shows the step-by-step flow of a program using symbols.
+
+Why Use?
+
+Easy to understand logic
+
+Helps in planning before coding
+
+Great for beginners
+
+Main Symbols:
+
+| Symbol Shape     | Name           | Example in Class       | Purpose                       |
+| ---------------- | -------------- | ---------------------- | ----------------------------- |
+| 🔵 Oval          | Start / Exit   | `Start`                | Start or End the program      |
+| 🔶 Parallelogram | Input / Output | `Read N`, `Print "Hi"` | Take input or show output     |
+| ▭ Rectangle      | Process        | `name = "Shradha"`     | Do some operation/calculation |
+| 🔷 Diamond       | Decision       | `is marks > 33?`       | Yes/No type condition check   |
+| ➡ Arrow          | Flow Arrow     | →                      | Shows the direction of steps  |
+
+
+Example Flow:
+
+Start  
+↓  
+Read N  
+↓  
+is N > 0?  
+↓Yes        ↓No  
+Print "Positive"  Print "Negative"  
+↓  
+End
