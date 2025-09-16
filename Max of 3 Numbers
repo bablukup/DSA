@@ -1,0 +1,66 @@
+DSA-001B
+
+### **Definition:**
+
+To find the largest number among A, B, and C using nested decision-making.
+
+**Logic Flow (Pseudocode)**
+
+```
+Start
+
+↓
+
+Input A, B, C
+
+↓
+
+If A > B
+
+→ If A > C → Print A
+
+→ Else → Print C
+
+Else
+
+→ If B > C → Print B
+
+→ Else → Print C
+
+↓
+
+End
+```
+
+### 🧠 Concept Summary (in 1 line):
+
+> Compare A > B, then check A > C or B > C, whichever is bigger → print it.
+> 
+
+**💻 Code**
+
+```java
+import java.util.Scanner;
+
+public class MaxOfThree {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+
+        if (a > b) {
+            if (a > c)
+                System.out.println("Max: " + a);
+            else
+                System.out.println("Max: " + c);
+        } else {
+            if (b > c)
+                System.out.println("Max: " + b);
+            else
+                System.out.println("Max: " + c);
+        }
+    }
+}
+
+```
