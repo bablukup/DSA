@@ -1,0 +1,79 @@
+DSA-001C
+
+### **Definition:**
+
+A number is **prime** if it is greater than 1 and divisible only by 1 and itself.
+
+### **Logic (Simple Words):**
+
+- If the number is **less than or equal to 1 → Not Prime**
+- Else check from 2 to √n:
+    - If any number divides `n` → **Not Prime**
+    - Else → **Prime**
+
+**Flow Steps: (Pseudocode)**
+
+```
+Start
+
+↓
+
+Input n
+
+↓
+
+Is n <= 1?
+
+→ Yes → Print "Not Prime" → End
+
+→ No
+
+↓
+
+Set i = 2
+
+Repeat while i*i <= n
+
+→ If n % i == 0 → Print "Not Prime" → End
+
+→ Else i = i + 1
+
+↓
+
+Print "Prime"
+
+↓
+
+End
+```
+
+💻 Java Code
+
+```java
+import java.util.Scanner;
+
+public class PrimeCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        boolean isPrime = true;
+
+        if (n <= 1) {
+            isPrime = false;
+        } else {
+            for (int i = 2; i * i <= n; i++) {
+                if (n % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if (isPrime)
+            System.out.println("Prime");
+        else
+            System.out.println("Not Prime");
+    }
+}
+
+```
