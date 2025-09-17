@@ -1,0 +1,78 @@
+DSA-001D
+
+### **Definition:**
+
+The sum of the first `N` natural numbers is the total of numbers from 1 to N.
+
+(Example: 1 + 2 + 3 + ... + N)
+
+---
+
+### **Two Methods:**
+
+### 🔹 Method 1: Using Formula
+
+> Sum = n * (n + 1) / 2
+> 
+> 
+> ✅ Fastest method, no loop needed
+> 
+
+### 🔹 Method 2: Using Loop
+
+> Add all numbers from 1 to n using a loop
+> 
+> 
+> ✅ Good for understanding, used in programming
+> 
+
+---
+
+### **Flow Steps (Loop Based):**
+
+```
+Start  
+↓  
+Input n  
+↓  
+Set sum = 0  
+Set i = 1  
+↓  
+Repeat while i <= n  
+    sum = sum + i  
+    i = i + 1  
+↓  
+Print sum  
+↓  
+End
+```
+
+💻 Code
+
+```java
+import java.util.Scanner;
+
+public class SumNatural {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        // Method 1: Formula
+        int sum1 = n * (n + 1) / 2;
+        System.out.println("Sum using formula: " + sum1);
+
+        // Method 2: Loop
+        int sum2 = 0;
+        for (int i = 1; i <= n; i++) {
+            sum2 += i;
+        }
+        System.out.println("Sum using loop: " + sum2);
+    }
+}
+```
+
+### 🧠 Summary Shortcut (for Copy):
+
+- Formula: `n * (n + 1) / 2`
+- Loop: i = 1 to n, add to sum
+- Final print sum
