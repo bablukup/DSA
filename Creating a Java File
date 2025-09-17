@@ -1,0 +1,126 @@
+DSA-002A
+
+### **Definition:**
+
+A **Java file** is a `.java` extension file that contains Java code (classes and methods) that can be compiled and run using the JDK.
+
+---
+
+### 🔧 **Steps to Create & Run a Java File:**
+
+1. **Create file:**
+    - Use Notepad, VS Code, IntelliJ, or any editor
+    - Save file as `Main.java` (or any name)
+2. **Write basic Java code:**
+    - The code must be inside a class
+    - The file name should match the class name (if public)
+3. **Compile:**
+    
+    ```java
+    
+    javac Main.java
+    
+    ```
+    
+4. **Run:**
+    
+    ```
+    java Main
+    
+    ```
+    
+
+### 📝 Short Format for Copy:
+
+```
+Steps to create Java File:
+1. Create file → Main.java
+2. Write code inside class
+3. Compile → javac Main.java
+4. Run → java Main
+
+```
+
+---
+
+### 💻 Sample Code:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello Bablu!");
+    }
+}
+```
+
+### **2. Boilerplate Code (Basic Structure)**
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // your code here
+    }
+}
+
+```
+
+- `class` = blueprint of the program
+- `main()` = starting point of Java
+
+---
+
+### 🔹 **3. Output in Java**
+
+```java
+System.out.println("Hello Bablu!");
+
+```
+
+- Use `System.out.println()` to print output
+- `\n` = new line, `\t` = tab space
+- You can print numbers, strings, variables, etc.
+
+---
+
+### 🔹 **4. Input in Java (using Scanner)**
+
+```java
+import java.util.Scanner;
+
+Scanner sc = new Scanner(System.in);
+int a = sc.nextInt();
+String name = sc.nextLine();
+
+```
+
+- Use `Scanner` to take input from a user
+- `nextInt()` → int input
+- `nextLine()` → string input
+- Don’t forget to import: `import java.util.Scanner;`
+
+---
+
+### 🧠 **Shortcut Note (1 line each):**
+
+- Create file → Save as `Main.java`
+- Boilerplate → class + main method
+- Output → `System.out.println()`
+- Input → `Scanner` class + `nextInt()` etc.
+
+---
+
+### 💻 Code Snippet (Full Program):
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your name: ");
+        String name = sc.nextLine();
+        System.out.println("Hello " + name);
+    }
+}
+
+```
