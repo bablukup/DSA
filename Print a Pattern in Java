@@ -1,0 +1,66 @@
+DSA-002B
+
+### **Definition:**
+
+Printing a pattern means displaying shapes or symbols (like `*`, `#`, numbers) in a structured format using **loops**.
+
+### 🧮 **Example: Print a Triangle Pattern**
+
+```
+*
+* *
+* * *
+* * * *
+```
+
+### 🧠 **1 Line:**
+
+> Outer loop = how many rows (line)
+> 
+> 
+> Inner loop = Controls what to print in each row `*` 
+> 
+
+### ✍️ **Copy Note Format:**
+
+```
+pattern Printing:
+- Use nested loops
+- Outer loop = rows
+- Inner loop = symbols
+
+Example:
+for i = 1 to n {
+    for j = 1 to i {
+        print "*"
+    }
+    print new line
+}
+```
+
+### 💻 Code:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int n = 4; // number of rows
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println(); // new line
+        }
+    }
+}
+
+```
+
+---
+
+### ✅ Bonus Tips:
+
+| Pattern Type | Loop Logic |
+| --- | --- |
+| Triangle | Inner loop runs `j <= i` |
+| Reverse Triangle | Inner loop runs `j <= n - i + 1` |
+| Square | Both loops run `i <= n` and `j <= n` |
