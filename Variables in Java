@@ -1,0 +1,67 @@
+DSA-002C
+
+> A variable in Java is a name given to a memory location that stores a value which can be changed during program execution.
+> 
+
+---
+
+### 🔹 **Why Use Variables?**
+
+To store data like numbers, text, or results which can be reused and updated.
+
+---
+
+### 🔹 **Types of Variables in Java:**
+
+| Type | Example | Use |
+| --- | --- | --- |
+| int | `int age = 20;` | Stores integers (whole numbers) |
+| float/double | `double pi = 3.14;` | Decimal values |
+| char | `char grade = 'A';` | Single character |
+| String | `String name = "Bablu";` | Group of characters (text) |
+| boolean | `boolean pass = true;` | true / false values |
+
+---
+
+### 🔹 **Syntax**
+
+```
+dataType variableName = value;
+
+```
+
+📌 Example:
+
+```java
+int a = 10;
+String name = "Bablu";
+
+```
+
+---
+
+### 🧠 **Logic in 1 Line:**
+
+> Variable = a container to store value (number, text, etc.)
+> 
+
+---
+
+### 💻 Code
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int age = 24;
+        double pi = 3.141;
+        char grade = 'A';
+        String name = "Bablu";
+        boolean passed = true;
+
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Grade: " + grade);
+        System.out.println("Passed: " + passed);
+    }
+}
+```
