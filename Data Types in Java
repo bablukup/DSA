@@ -1,0 +1,81 @@
+DSA-002D
+
+---
+
+### ✍️ **Definition:**
+
+> Data types in Java define the type of data a variable can hold, like integer, decimal, character, or Boolean.
+> 
+
+---
+
+### ✍️ **Why Use Data Types?**
+
+> To define what kind of value (number, decimal, text, etc.) we want to store in a variable.
+> 
+
+---
+
+### ✍️ **Types of Data Types in Java:**
+
+There are 2 main types:
+
+1. Primitive Data Types
+2. Non-Primitive Data Types (Reference)
+
+---
+
+### ✍️ **1. Primitive Data Types:**
+
+| Data Type | Size | Use Example |
+| --- | --- | --- |
+| int | 4 bytes | whole numbers → 10, -5 |
+| float | 4 bytes | decimal → 3.14f |
+| double | 8 bytes | large decimal → 3.141592 |
+| char | 2 bytes | single letter → 'A' |
+| boolean | 1 bit | true or false |
+| byte | 1 byte | small numbers → -128 to 127 |
+| short | 2 bytes | short numbers |
+| long | 8 bytes | bigger numbers → 123456L |
+
+---
+
+### ✍️ **2. Non-Primitive (Reference) Data Types:**
+
+| Type | Use Example |
+| --- | --- |
+| String | Text → "Bablu" |
+| Arrays | Collection of data |
+| Classes | User-defined types |
+
+---
+
+### 💡 **Logic in 1 Line:**
+
+**Data type = tells what kind of value a variable can store.**
+
+---
+
+### 💻 Code:
+
+```java
+java
+CopyEdit
+public class Main {
+    public static void main(String[] args) {
+        int age = 20;
+        float price = 99.99f;
+        double pi = 3.141592;
+        char grade = 'A';
+        boolean isPass = true;
+        String name = "Bablu";
+
+        System.out.println("Age: " + age);
+        System.out.println("Price: " + price);
+        System.out.println("Pi: " + pi);
+        System.out.println("Grade: " + grade);
+        System.out.println("Passed: " + isPass);
+        System.out.println("Name: " + name);
+    }
+}
+```
