@@ -1,0 +1,46 @@
+DSA-002E
+
+### ✍️ **Definition**
+
+> Adding two numbers using variables and printing the result.
+> 
+
+---
+
+### ✍️ **Syntax**
+
+```java
+int a = 5;
+int b = 7;
+int sum = a + b;
+System.out.println(sum);
+```
+
+---
+
+### 💡 **Logic in 1 Line**
+
+> Use + operator to add two numbers and store result in a variable.
+> 
+
+---
+
+### 💻 Java Code:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 7;
+        int sum = a + b;
+        System.out.println("Sum: " + sum);
+    }
+}
+```
+
+### Other Math Operations:
+
+- Difference: a - b
+- Product: a * b
+- Quotient: a / b
+- Remainder: a % b
