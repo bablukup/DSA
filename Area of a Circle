@@ -1,0 +1,39 @@
+DSA-002F
+
+### ✍️ **Definition**
+
+> The area of a circle is calculated using the formula Area = π × r × r, where r is the radius.
+> 
+
+---
+
+### ✍️ **Formula:**
+
+           Area = π × r × r
+                    = 3.14 × r × r
+
+---
+
+### ✍️ **Logic in 1 Line**
+
+> Use 3.14 * r * r to calculate area of circle.
+> 
+
+---
+
+### 💻 Java Code (Notion paste block):
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter radius: ");
+        float r = sc.nextFloat();
+
+        float area = 3.14f * r * r;
+        System.out.println("Area of circle: " + area);
+    }
+}
+```
