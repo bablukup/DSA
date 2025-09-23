@@ -1,0 +1,53 @@
+DSA-002G
+
+### 🧠 What is it?
+
+Changing one data type into another
+
+`(e.g., int → float, float → int)`
+
+---
+
+### 🧩 Types of Conversion
+
+---
+
+### 1️⃣ **Implicit Conversion** *(Automatic)*
+
+- Java does it automatically
+- Small → Big type
+- ✅ Safe
+
+📌 **Example:**
+
+```java
+int a = 10;
+float b = a;
+```
+
+💡 **Trick:** *Glass → Jug* (No overflow, safe)
+
+---
+
+### 2️⃣ **Explicit Conversion** *(Manual) = Type Casting*
+
+- You do it manually using `(type)`
+- Big → Small type
+- ⚠️ Risk of data loss
+
+📌 **Example:**
+
+```java
+float x = 10.5f;
+int y = (int) x;
+```
+
+💡 **Trick:** *Jug → Glass* (Overflow possible, be careful)
+
+---
+
+### 🧠 One Line Logic:
+
+**Small → Big = Java does it**
+
+**Big → Small = You cast it → Type Casting**
