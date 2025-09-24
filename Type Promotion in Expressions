@@ -1,0 +1,45 @@
+DSA-002H
+
+### ✍️ Definition:
+
+> When an expression has multiple data types,
+> 
+> 
+> Java automatically promotes smaller types to larger ones for safe calculation.
+> 
+
+---
+
+### 🧠 Rule:
+
+```java
+byte → short → int → long → float → double
+
+```
+
+---
+
+### 📌 Example 1:
+
+```java
+byte a = 10;
+byte b = 20;
+int result = a + b; // a and b promoted to int
+```
+
+---
+
+### 📌 Example 2:
+
+```java
+int x = 5;
+float y = 6.5f;
+float result = x + y; // x promoted to float
+```
+
+---
+
+### 💡 Logic in 1 Line:
+
+> Java promotes smaller data types to match the biggest one in the expression.
+>
