@@ -1,0 +1,125 @@
+# Operators in Java
+
+DSA-003A
+
+### Types of Operators in Java
+
+---
+
+### 🧠 What are Operators?
+
+> Operators are special symbols used to perform operations on variables and values.
+> 
+> 
+> Example: `+`, `-`, `==`, `&&`, etc.
+> 
+
+---
+
+### 🔢 Type of Operators
+
+| #️⃣ | Operator Type | Use (in short) |
+| --- | --- | --- |
+| 1️⃣ | Arithmetic Operators | Basic math: `+`, `-`, `*`, `/`, `%` |
+| 2️⃣ | Unary Operators | One operand: `++`, `--`, `+`, `-`, `!` |
+| 3️⃣ | Relational Operators | Comparison: `==`, `!=`, `<`, `>`, etc. |
+| 4️⃣ | Logical Operators | Boolean logic: `&&`, ` |
+| 5️⃣ | Assignment Operators | Assign value: `=`, `+=`, `-=`, etc. |
+| 6️⃣ | Bitwise Operators | Bit-level ops: `&`, ` |
+| 7️⃣ | Ternary Operator | Short if-else: `condition ? a : b` |
+| 8️⃣ | instanceof Operator | Object check: `obj instanceof Class` |
+
+---
+
+### 🧠 1-Line Trick to Remember:
+
+> 
+> 
+> 
+> → `A`rithmetic, `U`nary, `R`elational, `L`ogical, `A`ssignment, `T`ernary, `B`itwise, `I`nstanceof
+> 
+
+## **Most Used Operators**
+
+---
+
+### 1️⃣ **Arithmetic Operator**
+
+**Use**: Basic math operations (add, subtract, multiply, divide, remainder).
+
+**Example**:
+
+```java
+int a = 10, b = 5;
+System.out.println(a + b); // Output: 15
+```
+
+---
+
+### 2️⃣ **Unary Operator**
+
+**Use**: Works on a single value (increase, decrease, reverse boolean).
+
+**Example**:
+
+```java
+int a = 5;
+System.out.println(++a);  // Output: 6 (Pre-increment)
+```
+
+---
+
+### 3️⃣ **Relational Operator**
+
+**Use**: Compares two values (>, <, >=, <=, ==, !=) → gives true/false.
+
+**Example**:
+
+```java
+int a = 5, b = 10;
+System.out.println(a < b); // Output: true
+```
+
+---
+
+### 4️⃣ **Logical Operator**
+
+**Use**: Combines multiple conditions → gives true/false.
+
+**Operators**: `&&` (AND), `||` (OR), `!` (NOT)
+
+**Example**:
+
+```java
+int age = 20;
+System.out.println(age > 18 && age < 30); // true
+```
+
+---
+
+### 5️⃣ **Assignment Operator**
+
+**Use**: Assigns or updates values of variables.
+
+**Example**:
+
+```java
+int a = 10;
+a += 5;  // same as a = a + 5; → a becomes 15
+```
+
+---
+
+## 🧠 Interview Cracker Trick:
+
+| Operator | Meaning | Trick To Remember |
+| --- | --- | --- |
+| Arithmetic | Math | Add, Subtract, Multiply |
+| Unary | 1 variable | ++, --, ! (single value change) |
+| Relational | Compare | Always returns true/false |
+| Logical | Combine checks | `if(condition1 && condition2)` etc. |
+| Assignment | Set value | `=`, `+=`, `-=`, etc. |
+
+---
+
+[**Ternary Operator**](https://www.notion.so/Ternary-Operator-22a1a49919b88068a848e5b9905b1488?pvs=21)
