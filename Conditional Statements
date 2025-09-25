@@ -1,0 +1,79 @@
+DSA-004A
+
+## `if`, `else`, `else if`
+
+---
+
+### 🧠 **What is it?**
+
+Used to **make decisions** in code.
+
+Runs different blocks **based on conditions**.
+
+---
+
+### 🧩 **Syntax:**
+
+```java
+if (condition) {
+    // Runs if condition is true
+} else {
+    // Runs if condition is false
+}
+```
+
+➡ **Multiple checks:**
+
+```java
+if (condition1) {
+    // true block 1
+} else if (condition2) {
+    // true block 2
+} else {
+    // runs if none is true
+}
+```
+
+---
+
+### 📌 **Example:**
+
+```java
+int marks = 80;
+
+if (marks >= 90) {
+    System.out.println("Grade A");
+} else if (marks >= 75) {
+    System.out.println("Grade B");
+} else {
+    System.out.println("Grade C");
+}
+```
+
+---
+
+### 🧠 **1 Line Logic:**
+
+> "Check conditions top to bottom and run the first block that is true."
+> 
+
+---
+
+### ✅ **When to Use:**
+
+- Result: Pass / Fail
+- Check the largest numbers
+- Odd or Even
+- Age-based decisions
+- Tax, salary slabs, etc.
+
+---
+
+### 🧠 Tips:
+
+- Only 1 block runs
+- Use `{}` even for single-line
+- `else if` is optional
+- Always end with `else` if needed
+
+[`Switch` ](https://www.notion.so/Switch-22a1a49919b880339958c3c8d91ceedc?pvs=21)
