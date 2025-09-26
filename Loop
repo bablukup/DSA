@@ -1,0 +1,133 @@
+DSA-005A
+
+### **What is a Loop?**
+
+A **loop** is used to repeat a block of code multiple times until a specific condition is false.
+
+🧠 *Use:* To avoid writing repetitive code.
+
+---
+
+### 💡 **Why use Loops?**
+
+✅ Save time and effort
+
+✅ Reduce code size
+
+✅ Helps automate tasks like printing numbers, summing values, etc.
+
+---
+
+### 🔄 **3 Types of Loops in Java:**
+
+| Loop Type | Description | Use Case Example |
+| --- | --- | --- |
+| **for loop** | Run when you know how many times | Print 1 to 100 |
+| **while loop** | Run when you don't know the end time | Keep reading until "exit" |
+| **do-while** | Like while, but runs **at least once** | Show menu at least once |
+
+---
+
+### 🔍 **One-Line Logic:**
+
+"Use **loop** when the same logic repeats again and again."
+
+### **1. for Loop**
+
+📌 **Used when** the number of repetitions is known.
+
+**Syntax:**
+
+```java
+for(initialization; condition; update) {
+    // code to run
+}
+```
+
+**Example:**
+
+```java
+for(int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}
+```
+
+🧠 *Prints numbers from 1 to 5.*
+
+---
+
+### 🔹 **2. while Loop**
+
+📌 **Used when** the number of repetitions is not fixed — only condition-based.
+
+**Syntax:**
+
+```java
+while(condition) {
+    // code to run
+}
+```
+
+**Example:**
+
+```java
+int i = 1;
+while(i <= 5) {
+    System.out.println(i);
+    i++;
+}
+```
+
+🧠 *Also prints 1 to 5 — but condition is checked **before** loop starts.*
+
+---
+
+### 🔹 **3. do-while Loop**
+
+📌 **Used when** we want the code block to run **at least once**, even if the condition is false.
+
+**Syntax:**
+
+```java
+do {
+    // code to run
+} while(condition);
+```
+
+**Example:**
+
+```java
+int i = 1;
+do {
+    System.out.println(i);
+    i++;
+} while(i <= 5);
+```
+
+🧠 *Runs the code once, then checks the condition.*
+
+---
+
+### 📊 **Loop Comparison Table**
+
+| Loop Type | Condition Checked | Runs at Least Once | Use Case |
+| --- | --- | --- | --- |
+| `for` | Before loop | ❌ No | Known repetitions |
+| `while` | Before loop | ❌ No | Unknown repetitions |
+| `do-while` | After loop | ✅ Yes | Run once, then check |
+
+---
+
+### 🧠 One-line logic:
+
+**for** = fixed count,
+
+**while** = condition-based,
+
+**do-while** = run once, check later.
+
+[Sum of the First N Natural Numbers](https://www.notion.so/Sum-of-the-First-N-Natural-Numbers-22b1a49919b8809795a1e162c6c04004?pvs=21)
+
+[Reverse a Number](https://www.notion.so/Reverse-a-Number-22b1a49919b880c79cc6e7fc69128764?pvs=21)
+
+[`break` & `continue` Statement](https://www.notion.so/break-continue-Statement-22b1a49919b88023adc2ff8271ee7707?pvs=21)
