@@ -1,0 +1,71 @@
+DSA-004B
+
+### 🧠 **What is it?**
+
+Used when we have to **match one variable with many possible values**.
+
+Alternative to writing **multiple `if-else if`**.
+
+---
+
+### 🧩 **Syntax:**
+
+```java
+switch (variable) {
+    case value1:
+        // code block
+        break;
+    case value2:
+        // code block
+        break;
+    ...
+    default:
+        // runs if no case matched
+}
+```
+
+---
+
+### 📌 **Example:**
+
+```java
+int day = 3;
+
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break;
+    case 2:
+        System.out.println("Tuesday");
+        break;
+    case 3:
+        System.out.println("Wednesday");
+        break;
+    default:
+        System.out.println("Invalid day");
+}
+```
+
+---
+
+### 🧠 **1 Line Logic:**
+
+> Check value of a variable → match with case → run that block
+> 
+
+---
+
+### ✅ **Important Points:**
+
+- Use `break` to stop after matching the case
+- `default` runs if no match
+- Works with `int`, `char`, `String`, `enum`
+
+---
+
+### ✅ **Use-cases:**
+
+- Menu-driven programs
+- Calculators
+- Days, months, grades
+- Key shortcuts/options
