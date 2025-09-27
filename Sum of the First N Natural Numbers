@@ -1,0 +1,56 @@
+DSA-005B
+
+### **What is it?**
+
+To calculate the total of all numbers from 1 to N (like 1 + 2 + 3 + ... + N)
+
+---
+
+### ✅ **Logic:**
+
+We can use:
+
+1. **Formula Method:**
+    
+    `sum = n * (n + 1) / 2` → Fastest
+    
+2. **Loop Method (for/while loop):**
+    
+    Add numbers one by one from 1 to N.
+    
+
+---
+
+### 🧮 **Formula Code:**
+
+```java
+int n = 10;
+int sum = n * (n + 1) / 2;
+System.out.println("Sum is: " + sum);
+```
+
+🧠 *Best when only the sum is needed — no steps required.*
+
+---
+
+### 🔁 **Using Loop (for loop):**
+
+```java
+int n = 10;
+int sum = 0;
+
+for(int i = 1; i <= n; i++) {
+    sum = sum + i;
+}
+System.out.println("Sum is: " + sum);
+```
+
+🧠 *Useful when learning how loops work.*
+
+---
+
+### 🧠 One Line Logic:
+
+Use `n*(n+1)/2` for speed,
+
+Use loop for step-by-step logic.
