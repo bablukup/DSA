@@ -1,0 +1,51 @@
+DSA-005C
+
+### **What is it?**
+
+Given a number, reverse its digits.
+
+📌 *Example:*
+
+Input: `1234`
+
+Output: `4321`
+
+---
+
+### 🔍 **Logic:**
+
+1. Use a loop to extract digits using `%` (modulo)
+2. Build a reverse using `rev = rev * 10 + digit`
+3. Shrink the original number using `/` (divide)
+
+---
+
+### ✅ **Code (Using while loop):**
+
+```java
+int num = 1234;
+int rev = 0;
+
+while(num > 0) {
+    int digit = num % 10;
+    rev = rev * 10 + digit;
+    num = num / 10;
+}
+
+System.out.println("Reversed: " + rev);
+```
+
+---
+
+### 🧠 One-line logic:
+
+> Extract digits from right → add to reverse number → shrink input.
+> 
+
+---
+
+### ⚠️ Be Careful:
+
+- The loop runs until the number becomes 0
+- `rev = rev * 10 + digit` Is the key line
+- Works only for positive numbers (for now)
