@@ -1,0 +1,38 @@
+DSA-006A
+Nested Loops (Pattern Basics)
+🔁 What is a Nested Loop?
+A loop inside another loop.
+→ Used when we need to repeat something inside a repeated process.
+→ Mostly used in patterns, 2D arrays, matrices.
+📌 Structure:
+for (int i = 1; i <= rows; i++) {
+    for (int j = 1; j <= cols; j++) {
+        // Print something
+    }
+    System.out.println();
+}
+​
+👉 Outer loop → Controls number of rows
+👉 Inner loop → Controls number of columns / stars / characters
+🧠 Logic (in words):
+Outer loop → How many lines/rows?
+Inner loop → What to print in each line (stars, numbers, letters)?
+🌟 Example:
+*
+* *
+* * *
+* * * *
+​
+for (int i = 1; i <= 4; i++) {
+    for (int j = 1; j <= i; j++) {
+        System.out.print("* ");
+    }
+    System.out.println();
+}
+​
+📌 Outer loop → runs 4 times (rows)
+📌 Inner loop → prints i stars in each row
+🧠 Trick to Remember:
+Stars increase according to the row number.
+i-th row → i stars
+
