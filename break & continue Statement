@@ -1,0 +1,24 @@
+DSA-005D
+break Statement
+📌 What is it?
+break is used to immediately exit a loop or switch statement.
+📌 Use case: When a condition is met and there's no need to continue the loop.
+Syntax Example:
+​
+🧠 Output: 1 2
+👉 Loop stops when i == 3
+🔹 continue Statement
+📌 What is it?
+continue is used to skip the current iteration and move to the next one.
+📌 Use case: When a condition is met but you still want the loop to continue.
+Syntax Example:
+​
+🧠 Output: 1 2 4 5
+👉 Skips when i == 3, rest continues
+🧠 One-Line Logic:
+break = exit loop
+continue = skip current step
+🧠 Tips:
+break usually used with if condition inside loop
+continue helps filter or skip values
+
