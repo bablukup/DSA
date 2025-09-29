@@ -1,0 +1,102 @@
+DSA-007A
+
+### Introduction to Functions
+
+### 🧠 1-Line Logic:
+
+**Functions** are blocks of code used to perform a specific task and can be reused multiple times.
+
+---
+
+### 🔹 Definition:
+
+A **function** (also called a **method** in Java) is a named block of code that is **defined once and can be called multiple times** to perform a task.
+
+---
+
+### 📌 Use / Purpose:
+
+- Code reusability
+- Break complex problems into small parts
+- Makes code clean, modular, and easy to debug
+- Used in **logic, patterns, calculations, DSA, etc.**
+
+---
+
+### 🔤 Syntax:
+
+```java
+returnType functionName(parameters) {
+    // code block
+}
+```
+
+📌 Example:
+
+```java
+int add(int a, int b) {
+    return a + b;
+}
+```
+
+---
+
+### 🧪 Code with Output:
+
+```java
+public class Main {
+    static int add(int x, int y) {
+        return x + y;
+    }
+
+    public static void main(String[] args) {
+        int result = add(5, 7);
+        System.out.println("Sum is: " + result);
+    }
+}
+```
+
+📤 Output: `Sum is: 12`
+
+---
+
+### 💡 Tip to Remember:
+
+Think of function like a **calculator button** – press it anytime you need it.
+
+---
+
+### 🔄 Confusion Buster:
+
+- `Function` = block of code
+- `Method` = Function inside a **class** (Java follows OOP, so uses "method")
+
+[Function Syntax & Code Demo](https://www.notion.so/Function-Syntax-Code-Demo-22d1a49919b880779be0e8f341d471b2?pvs=21)
+
+[Function Syntax with Parameters](https://www.notion.so/Function-Syntax-with-Parameters-22d1a49919b880d89cdbe8f0ed4bbeb0?pvs=21)
+
+[**What Happens in Memory When a Function is Called?**](https://www.notion.so/What-Happens-in-Memory-When-a-Function-is-Called-22e1a49919b8800eaf27f1c8accc6c16?pvs=21)
+
+[Call by Value in Java](https://www.notion.so/Call-by-Value-in-Java-22f1a49919b8803aa109d67cd757adf0?pvs=21)
+
+[Product of a & b](https://www.notion.so/Product-of-a-b-22f1a49919b880849831eecb5d8cfcd0?pvs=21)
+
+[Factorial of a Number](https://www.notion.so/Factorial-of-a-Number-22f1a49919b88085ba4eff02d6a14159?pvs=21)
+
+[Inbuilt vs User-defined Methods](https://www.notion.so/Inbuilt-vs-User-defined-Methods-22f1a49919b88002a062e2720d6c9d44?pvs=21)
+
+[Function Overloading in Java](https://www.notion.so/Function-Overloading-in-Java-22f1a49919b8802a9fa0de981ee3fdd4?pvs=21)
+
+[Overloading using Parameters](https://www.notion.so/Overloading-using-Parameters-22f1a49919b88085ae27cff7aa1ca4a7?pvs=21)
+
+[Overloading using Data Types](https://www.notion.so/Overloading-using-Data-Types-22f1a49919b880b994e5e63e2d1a4a27?pvs=21)
+
+[**Prime Number Check (Normal & Optimized)**](https://www.notion.so/Prime-Number-Check-Normal-Optimized-22f1a49919b880c6b9f6f9e796520ad0?pvs=21)
+
+[Primes in Range](https://www.notion.so/Primes-in-Range-22f1a49919b880748d05dd4cea35dba0?pvs=21)
+
+[Binary ↔ Decimal Conversion](https://www.notion.so/Binary-Decimal-Conversion-22f1a49919b8801b82bde41add7247fc?pvs=21)
+
+[Method Scope in Java](https://www.notion.so/Method-Scope-in-Java-22f1a49919b880299eced0587a9736dd?pvs=21)
+
+[Block Scope in Java](https://www.notion.so/Block-Scope-in-Java-22f1a49919b8808b91a0f5cccc7e2d1e?pvs=21)
