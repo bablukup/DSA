@@ -1,0 +1,82 @@
+DSA-007B
+
+### 🧠 1-Line Logic:
+
+Functions are **defined once** using syntax and then **called** wherever required.
+
+---
+
+### 🔤 Basic Syntax of Function:
+
+```java
+returnType functionName(parameters) {
+    // code block
+    return value;
+}
+```
+
+🔹 Example:
+
+```java
+int square(int x) {
+    return x * x;
+}
+```
+
+---
+
+### 🧪 Full Working Code:
+
+```java
+public class Main {
+
+    // Function to print "Hello"
+    static void printHello() {
+        System.out.println("Hello Bablu!");
+    }
+
+    // Function to add two numbers
+    static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        printHello(); // Function call
+        int result = add(5, 10); // Function call
+        System.out.println("Sum is: " + result);
+    }
+}
+```
+
+📤 Output:
+
+```java
+Hello Bablu!
+Sum is: 15
+```
+
+---
+
+### 🔄 Key Points:
+
+- `void` → No return value
+- `int`, `String`, etc. → Function will return that type
+- `static` → So we can call function without creating object
+- Functions **must be declared outside main ()** but **inside class**
+
+---
+
+### 🔁 Why Functions?
+
+- Avoid code repetition
+- Easy to manage big programs
+- Reuse logic again & again
+
+---
+
+### 
+
+### 💡 Easy Trick to Remember:
+
+> "A function is like a machine — you give it input (arguments), and it gives you output (return value)."
+>
