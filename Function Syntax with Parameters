@@ -1,0 +1,127 @@
+DSA-007C
+
+### 🧠 1-Line Logic:
+
+Parameters enable us to **send data into a function,** allowing it to work with it.
+
+---
+
+### 🔹 Definition:
+
+**Parameters** are variables listed in the function **definition**.
+
+**Arguments** are actual values passed when the function is **called**.
+
+---
+
+### 🔤 Syntax:
+
+```java
+returnType functionName(dataType param1, dataType param2) {
+    // code using param1 and param2
+    return result;
+}
+```
+
+---
+
+### 🧪 Example Code:
+
+```java
+public class Main {
+
+    static int multiply(int a, int b) {
+        return a * b;
+    }
+
+    public static void main(String[] args) {
+        int result = multiply(4, 6);  // 4 and 6 are arguments
+        System.out.println("Product: " + result);
+    }
+}
+```
+
+📤 Output:
+
+```java
+Product: 24
+```
+
+---
+
+### 🧠 Tip to Remember:
+
+> "Parameters = variable names inside function"
+> 
+> 
+> **"Arguments = actual values you pass"**
+> 
+
+📌 You define **parameters** once, but pass **different arguments** every time you call the function.
+
+---
+
+### 🔄 Interview Confusion Alert:
+
+| Term | Meaning |
+| --- | --- |
+| Parameter | Variable in function definition |
+| Argument | Actual value in function call |
+
+✅ **Java is always "call by value"** — arguments are passed as copies (not originals).
+
+### **Parameters vs Arguments**
+
+.
+
+---
+
+### 🔄 Difference Table:
+
+| 🔹 Feature | 🔸 Parameters | 🔸 Arguments |
+| --- | --- | --- |
+| 📌 Location | In function **definition** | In function **call** |
+| 🎯 Purpose | To **receive input** | To **provide input** |
+| 🔤 Example | `int sum(int a, int b)` | `sum(5, 10);` |
+| 💬 What are they? | Placeholders / variable names | Actual values / data |
+| 🧠 Analogy | Box label | Thing inside the box |
+
+---
+
+### 🧪 Code Example:
+
+```java
+// Parameters: a, b
+static int add(int a, int b) {
+    return a + b;
+}
+
+public static void main(String[] args) {
+    // Arguments: 4, 7
+    int result = add(4, 7);
+    System.out.println(result);
+}
+```
+
+📤 Output: `11`
+
+---
+
+### 💡 Tip to Remember:
+
+> "Parameters are what you expect. Arguments are what you get."
+> 
+
+🧠 Example:
+
+```java
+int greet(String name) → parameter
+greet("Bablu") → argument
+```
+
+---
+
+### ❗ Interview Insight:
+
+- Java uses **Call by Value**, so arguments are copied to parameters.
+- Changes in parameters **don’t affect original arguments**.
