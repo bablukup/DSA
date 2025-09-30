@@ -1,0 +1,87 @@
+DSA-007D
+
+### 🧠 1-Line Logic:
+
+When a function is called, Java creates a **new memory block** (stack frame) for it, and once it finishes, that memory is removed.
+
+---
+
+### 🔄 Step-by-Step Flow:
+
+1️⃣ **Program Starts** → `main()` method runs
+
+2️⃣ Inside `main()`, a function is called
+
+3️⃣ A **new memory block (stack frame)** is created for that function
+
+4️⃣ Parameters receive **copies** of argument values
+
+5️⃣ Function runs its code and returns a value
+
+6️⃣ Memory block is **deleted** once function ends
+
+7️⃣ Control goes back to `main()` or calling point
+
+---
+
+### 📦 Memory Analogy:
+
+> Think of memory like a stack of plates 🍽️
+> 
+> 
+> Each time a function is called, a new plate is added (stack frame)
+> 
+> When function ends, the plate is removed (popped)
+> 
+
+---
+
+### 📌 Code Example:
+
+```java
+public class Main {
+
+    static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 20;
+        int result = add(x, y);
+        System.out.println(result);
+    }
+}
+```
+
+---
+
+### 📊 Memory View:
+
+```java
+Call Stack:
+--------------
+|  add()     | ← contains a=10, b=20
+--------------
+|  main()    | ← contains x=10, y=20
+--------------
+```
+
+- When `add(10, 20)` is called → memory created for `a` and `b`
+- After return → `add()` memory is cleared
+- Only `main()` continues
+
+---
+
+### ❗ Important Note:
+
+✅ Java passes values using **"Call by Value"**
+
+⛔ That means **original variables are not modified** inside the function
+
+---
+
+### 💡 Tip to Remember:
+
+> "Each function gets its own temporary memory space, and it dies after returning."
+>
