@@ -1,0 +1,73 @@
+DSA-007E
+
+### 🧠 1-Line Logic:
+
+In Java, when we call a function, we pass a **copy of the value**, not the original variable
+
+---
+
+### 🔍 Definition:
+
+> Call by Value means the method receives a copy of the variable, so changes inside the method do not affect the original value.
+> 
+
+---
+
+### 🔤 Syntax Example:
+
+```java
+void changeValue(int x) {
+    x = x + 5;
+    System.out.println("Inside: " + x);
+}
+
+public static void main(String[] args) {
+    int a = 10;
+    changeValue(a);
+    System.out.println("Outside: " + a);
+}
+```
+
+📤 Output:
+
+```java
+Inside: 15
+Outside: 10
+
+```
+
+✅ Even after changing `x` inside function, original `a` remains unchanged.
+
+---
+
+### 📦 Memory Analogy:
+
+> Java creates a new box for the parameter, puts a copy of the value,
+> 
+> 
+> and when function ends, that box is **deleted**.
+> 
+
+---
+
+### ❗ Important Points:
+
+- Java is **always Call by Value** — even for objects
+- For **primitive types** (int, float, etc.):
+    
+    🔹 You cannot change original variable
+    
+- For **objects**:
+    
+    🔹 You can change the object’s **contents**, but not the object **reference**
+    
+
+---
+
+### 🧠 Tip to Remember:
+
+> Java never gives original variable — it only gives a copy
+> 
+> 
+> You mess with the copy, not the real one 😄
+>
