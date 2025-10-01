@@ -1,0 +1,76 @@
+DSA-007G
+
+### 🧠 1-Line Logic:
+
+**Factorial** of a number `n` means `n × (n-1) × (n-2) × ... × 1`
+
+(denoted as `n!`)
+
+📌 Example:
+
+```java
+5! = 5 × 4 × 3 × 2 × 1 = 120
+```
+
+---
+
+### 🔤 Code (Using Loop):
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+
+        int fact = 1;
+        for (int i = 1; i <= n; i++) {
+            fact = fact * i;
+        }
+
+        System.out.println("Factorial of " + n + " = " + fact);
+    }
+}
+```
+
+📤 Output:
+
+```java
+Enter a number: 5  
+Factorial of 5 = 120
+```
+
+---
+
+### 📘 Formula:
+
+```java
+factorial = n × (n-1) × (n-2) × ... × 1
+or
+fact = fact × i  → loop from 1 to n
+```
+
+---
+
+### 📦 Use Case:
+
+- Combinations / Permutations
+- Probability
+- Recursion practice
+- Interview Questions (frequently asked)
+
+---
+
+### ✍️ Notebook Tip:
+
+```java
+Factorial → n × (n-1) × (n-2) × ... × 1
+Formula: fact = fact × i (1 to n)
+
+Example: 5! = 120
+
+Use: Loops, recursion, interview
+
+```
