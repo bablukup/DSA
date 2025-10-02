@@ -1,0 +1,55 @@
+DSA-007
+
+### 1-Line Logic:
+
+- **Inbuilt Methods** → Already provided by Java
+- **User-defined Methods** → We create ourselves to reuse logic
+
+---
+
+### 🔍 Difference Table:
+
+| 🔹 Feature | 🏗 Inbuilt Method | 🛠 User-defined Method |
+| --- | --- | --- |
+| 📌 Defined By | Java / Library | Programmer (You) |
+| 🧱 Example | `Math.sqrt()`, `System.out.println()` | `add()`, `multiply()`, `isPrime()` |
+| ⚙️ Reusability | Reusable & pre-tested | Reusable if created correctly |
+| 🧠 When Used | For common operations | For custom logic |
+| 🔤 Syntax | Just call the method | Must define + then call |
+
+---
+
+### 🧪 Example Code:
+
+**Inbuilt:**
+
+```java
+System.out.println(Math.max(10, 20));  // Output: 20
+```
+
+**User-defined:**
+
+```java
+int add(int a, int b) {
+    return a + b;
+}
+```
+
+---
+
+### 💡 Tip to Remember:
+
+> ✅ Use inbuilt when available
+> 
+> 
+> 🛠 Create **user-defined** when logic is **custom or reused many times**
+> 
+
+---
+
+### 🧠 Summary:
+
+- **Inbuilt = ready-made tools**
+- **User-defined = custom tools you build**
+
+✅ Use both together to write clean, smart Java code.
