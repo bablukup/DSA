@@ -1,0 +1,97 @@
+DSA-007
+
+### 1-Line Logic:
+
+> Function Overloading = Same function name, but different parameters
+> 
+
+➡ Java automatically decides which version to run, based on **arguments** passed.
+
+---
+
+### 🔹 Why use it?
+
+- Code readability
+- Reusability
+- Logical grouping of similar tasks
+
+---
+
+### 🔤 Example Code:
+
+```java
+public class Main {
+
+    static int add(int a, int b) {
+        return a + b;
+    }
+
+    static int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    static double add(double a, double b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(add(2, 3));       // 5
+        System.out.println(add(1, 2, 3));    // 6
+        System.out.println(add(2.5, 3.5));   // 6.0
+    }
+}
+```
+
+📤 Output:
+
+```
+5
+6
+6.0
+```
+
+---
+
+### 🔎 How it works?
+
+Java checks:
+
+1. **Number of parameters**
+2. **Type of parameters**
+
+If either is different, Java considers it as a different function.
+
+---
+
+### 📘 Rules for Overloading:
+
+✅ Same function name
+
+✅ Different parameters (number or type)
+
+❌ Return type alone is **not** enough!
+
+---
+
+### 🧠 Tip to Remember:
+
+> "Same name, different way to call"
+> 
+
+🔁 Like:
+
+```java
+print(String s)
+print(int i)
+print(double d)
+```
+
+---
+
+### 📓 Notebook Summary:
+
+```
+🔹 Function Overloading = Same name, different parameters
+🔹 Improves readability & reusability
+🔹 Java decides which function to run based on arguments
+```
