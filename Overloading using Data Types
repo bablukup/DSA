@@ -1,0 +1,75 @@
+DSA-007
+
+### 1-Line Logic:
+
+> When you use the same function name but change the data type of parameters, it’s called Overloading using Data Types.
+> 
+
+---
+
+### 🔎 Key Point:
+
+Java allows multiple methods with the same name as long as the **parameter data types differ**.
+
+---
+
+### 🧪 Example Code:
+
+```java
+
+public class Main {
+
+    static int square(int x) {
+        return x * x;
+    }
+
+    static double square(double x) {
+        return x * x;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(square(5));     // int → 25
+        System.out.println(square(3.5));   // double → 12.25
+    }
+}
+```
+
+📤 Output:
+
+```java
+
+25
+12.25
+
+```
+
+---
+
+### 🧠 Tip to Remember:
+
+> 📌 Overloading using Data Types = Same function name, different parameter types
+> 
+
+---
+
+### ⚠️ Interview Note:
+
+- Return type alone **cannot** decide overloading
+- **Parameter types must differ**
+
+---
+
+### 📓 Notebook Summary:
+
+```java
+
+🔹 Overloading using Data Types:
+→ Same name, but change in parameter types
+
+📌 Example:
+square(int x)
+square(double x)
+
+✅ Used to perform same task on different data types
+
+```
