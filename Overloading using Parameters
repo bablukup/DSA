@@ -1,0 +1,90 @@
+DSA-007
+
+### 1-Line Logic:
+
+> Overloading means using the same function name but with different parameters
+> 
+> 
+> (Java uses parameters to decide which function to call)
+> 
+
+---
+
+### 🔎 How Parameters Work in Overloading?
+
+Java allows multiple functions with the **same name** if:
+
+| Condition | Meaning |
+| --- | --- |
+| 🔢 Number | Different number of parameters |
+| 🧬 Type | Different data types of parameters |
+
+---
+
+### 🧪 Example Code:
+
+```java
+java
+CopyEdit
+public class Main {
+
+    static void greet() {
+        System.out.println("Hello!");
+    }
+
+    static void greet(String name) {
+        System.out.println("Hello, " + name);
+    }
+
+    static void greet(String name, int age) {
+        System.out.println(name + " is " + age + " years old.");
+    }
+
+    public static void main(String[] args) {
+        greet();                    // No parameters
+        greet("Bablu");             // 1 String
+        greet("Bablu", 23);         // 1 String + 1 int
+    }
+}
+
+```
+
+📤 Output:
+
+```
+pgsql
+CopyEdit
+Hello!
+Hello, Bablu
+Bablu is 23 years old.
+
+```
+
+---
+
+### 💡 Tip to Remember:
+
+> Overloading = Same name, different parameters
+> 
+> 
+> Useful when same operation needs different inputs
+> 
+
+---
+
+### 📓 Notebook Points:
+
+```
+typescript
+CopyEdit
+📌 Overloading using Parameters:
+→ Change in number or type of parameters
+
+🔹 Example:
+greet()
+greet(String name)
+greet(String name, int age)
+
+✅ Java chooses function based on passed arguments
+
+```
