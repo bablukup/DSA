@@ -1,0 +1,68 @@
+DSA-007
+
+### 1-Line Logic:
+
+> Find and print all prime numbers between a and b (inclusive)
+> 
+
+---
+
+### 🔤 Java Code:
+
+```java
+
+public class Main {
+
+    static boolean isPrime(int n) {
+        if (n <= 1) return false;
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+
+    static void printPrimesInRange(int a, int b) {
+        for (int i = a; i <= b; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        printPrimesInRange(10, 30);
+    }
+
+```
+
+📤 Output:
+
+```java
+
+11 13 17 19 23 29
+
+```
+
+---
+
+### 📘 Notebook Notes:
+
+```java
+
+🔹 Goal: Print primes from a to b
+→ Loop from i = a to b
+→ Use isPrime(i) to check each number
+
+🧠 isPrime(n): check if n has any factor up to √n
+✅ Time: O((b - a + 1) × √n)
+
+📌 Useful in DSA, number theory, interviews
+
+```
+
+---
+
+### 🧠 Tip to Remember:
+
+> Combine loop + prime logic = "Primes in Range"
+>
