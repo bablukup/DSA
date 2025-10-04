@@ -1,0 +1,102 @@
+DSA-007
+
+### 🧠 1-Line Logic:
+
+A **prime number** is a number greater than 1 that is **divisible only by 1 and itself**.
+
+📌 Examples: 2, 3, 5, 7, 11...
+
+---
+
+### 🔎 🔹 Method 1: Normal (Brute Force)
+
+**Logic:** Check all numbers from `2 to n-1`
+
+```java
+boolean isPrime(int n) {
+    if (n <= 1) return false;
+
+    for (int i = 2; i < n; i++) {
+        if (n % i == 0) return false;
+    }
+
+    return true;
+}
+```
+
+⛔ Slow for large numbers (Time: O(n))
+
+---
+
+### 🧠 🔹 Method 2: Optimized
+
+**Logic:** No factor will exist beyond `√n`
+
+```java
+boolean isPrime(int n) {
+    if (n <= 1) return false;
+
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) return false;
+    }
+
+    return true;
+}
+```
+
+✅ Faster (Time: O(√n))
+
+📌 Most used in interviews & coding tests
+
+---
+
+### 📤 Full Code (With Input):
+
+```java
+
+import java.util.Scanner;
+
+public class Main {
+
+    static boolean isPrime(int n) {
+        if (n <= 1) return false;
+
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) return false;
+        }
+
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        if (isPrime(n))
+            System.out.println(n + " is Prime");
+        else
+            System.out.println(n + " is Not Prime");
+    }
+}
+```
+
+📤 Output:
+
+```java
+Input: 7
+Output: 7 is Prime
+```
+
+---
+
+### ✍️ Notebook Notes:
+
+```java
+📘 Prime Number:
+Only divisible by 1 & itself (n > 1)
+
+🔹 Normal → Check 2 to n-1  ⛔ Slow
+🔹 Optimized → Check 2 to √n ✅
+
+✅ Use optimized in DSA & interviews
+```
