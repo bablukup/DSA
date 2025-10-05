@@ -1,0 +1,136 @@
+DSA-007
+
+### 1. Binary to Decimal
+
+---
+
+### 🧠 Logic:
+
+> Multiply each binary digit by powers of 2 (from right to left) and add them.
+> 
+
+📌 Example:
+
+```java
+
+Binary: 1011
+= 1×2³ + 0×2² + 1×2¹ + 1×2⁰
+= 8 + 0 + 2 + 1 = 11
+
+```
+
+---
+
+### 🔤 Java Code:
+
+```java
+
+public class Main {
+    static int binaryToDecimal(int binary) {
+        int decimal = 0, pow = 0;
+
+        while (binary > 0) {
+            int lastDigit = binary % 10;
+            decimal += lastDigit * Math.pow(2, pow);
+            pow++;
+            binary /= 10;
+        }
+
+        return decimal;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(binaryToDecimal(1011));  // Output: 11
+    }
+}
+
+```
+
+---
+
+### 🧾 Notebook Points:
+
+```java
+
+📘 Binary → Decimal:
+→ Multiply digits with powers of 2
+→ Add results
+
+🔢 1011 → 11
+
+```
+
+---
+
+---
+
+### 🔁 2. Decimal to Binary
+
+---
+
+### 🧠 Logic:
+
+> Divide number by 2 repeatedly and write remainders in reverse.
+> 
+
+📌 Example:
+
+```java
+
+Decimal: 13
+→ 13/2 = 6 rem 1
+→ 6/2 = 3 rem 0
+→ 3/2 = 1 rem 1
+→ 1/2 = 0 rem 1
+Binary = 1101
+
+```
+
+---
+
+### 🔤 Java Code:
+
+```java
+
+public class Main {
+    static int decimalToBinary(int n) {
+        int binary = 0, pow = 1;
+
+        while (n > 0) {
+            int rem = n % 2;
+            binary += rem * pow;
+            pow *= 10;
+            n /= 2;
+        }
+
+        return binary;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(decimalToBinary(13));  // Output: 1101
+    }
+}
+
+```
+
+---
+
+### 🧾 Notebook Points:
+
+```java
+
+📘 Decimal → Binary:
+→ Divide by 2, collect remainders (reverse)
+
+🔢 13 → 1101
+
+```
+
+---
+
+### ✅ Summary Table:
+
+| 🔄 Conversion | 🧠 Method |
+| --- | --- |
+| Binary → Decimal | Multiply each bit by power of 2 |
+| Decimal → Binary | Divide by 2 and reverse remainders |
