@@ -1,0 +1,88 @@
+DSA-007
+
+### What is Scope?
+
+> Scope refers to the region in code where a variable is accessible.
+> 
+> 
+> In Java, every variable exists only within a specific block — that’s its scope.
+> 
+
+---
+
+### 🔹 What is Method Scope?
+
+> A variable declared inside a method is called a local variable.
+> 
+> 
+> It can only be accessed **within that method**.
+> 
+
+📌 When the method is called → variable is created
+
+📌 When the method ends → variable is destroyed
+
+---
+
+### 🧪 Java Code Example:
+
+```java
+
+public class Main {
+
+    static void greet() {
+        String name = "Bablu";
+        System.out.println("Hello, " + name); // ✅ Valid here
+    }
+
+    public static void main(String[] args) {
+        greet();
+        // System.out.println(name); ❌ Error: 'name' not accessible here
+    }
+}
+```
+
+🔍 `name` is declared **inside `greet()`** — so it's only valid there.
+
+---
+
+### 📓 Notebook Summary:
+
+```java
+
+📌 Method Scope:
+→ Variable declared inside a method
+→ Also known as: Local Variable
+
+✅ Accessible only within that method
+❌ Not visible outside the method
+
+🔁 Created when method runs
+🗑️ Destroyed when method ends
+
+🛠️ Helps isolate logic & save memory
+
+```
+
+---
+
+### 🔍 Interview Tip:
+
+> Method scope avoids naming conflicts and improves memory efficiency.
+> 
+
+| Term | Meaning |
+| --- | --- |
+| Method Scope | Variable inside a method |
+| Local Variable | Another name for method-scoped variable |
+| Lifetime | During method execution only |
+
+---
+
+### 🧠 Real-Life Analogy:
+
+> A local variable is like a pen inside a drawer.
+> 
+> 
+> You can only use it **while the drawer is open** 🖊️🔓
+>
