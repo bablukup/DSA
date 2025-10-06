@@ -51,7 +51,6 @@ Every topic is organized with a unique ID (`DSA-001`, `DSA-002`, etc.) to keep s
 
 ## 🌟 Future Plans  
 
-- Add **Python implementations** alongside Java.  
 - Add **practice problems with solutions**.  
 - Create a **DSA roadmap** inside the repo.  
 
