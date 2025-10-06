@@ -1,0 +1,74 @@
+DSA-007
+
+### What is Block Scope?
+
+> A block is anything inside { } curly braces.
+> 
+> 
+> Variables declared **inside a block** `{}` can only be accessed **within that block**.
+> 
+
+---
+
+### 🔤 Java Code Example:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int a = 10;
+
+        {
+            int b = 20;
+            System.out.println(a); // ✅ a is accessible here
+            System.out.println(b); // ✅ b is accessible here
+        }
+
+        System.out.println(a); // ✅ a is accessible
+        // System.out.println(b); ❌ Error: b is not visible here
+    }
+}
+```
+
+📌 `b` is only accessible **inside the inner block** where it’s declared.
+
+---
+
+### 📓 Notebook Summary:
+
+```
+📌 Block Scope:
+→ Variable declared inside { } block
+→ Accessible only within that block
+
+🔁 Created when block starts
+🗑️ Destroyed when block ends
+
+✅ Useful in loops, if-else, and nested blocks
+```
+
+---
+
+### 🧠 Where is it used?
+
+- `if`, `else`, `for`, `while`, `switch` — all are **blocks**.
+- Variables inside these **can’t be used outside** the block.
+
+---
+
+### 🔍 Interview Tip:
+
+> Java follows "No shadowing in same block" —
+> 
+> 
+> You can’t declare two variables with the same name in the same scope.
+> 
+
+---
+
+### 🧠 Analogy:
+
+> Think of a block like a room.
+> 
+> 
+> A variable inside that room **can’t walk out** of it. 🚪❌
+>
