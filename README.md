@@ -1,7 +1,7 @@
 # 📘 DSA – Data Structures & Algorithms  
 
 This repository contains **handwritten-style DSA notes, definitions, and Java codes** written by **Bablu Kumar**.  
-Every topic is organized with a unique ID (`DSA-001`, `DSA-002`, etc.) to keep sync between notebook and code files.  
+Every topic is organized with a unique ID (`DSA-001`, `DSA-002`, etc.) to maintain synchronization between the notebook and code files.  
 
 ---
 
