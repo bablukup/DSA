@@ -1,0 +1,59 @@
+2D Arrays (Multi-Dimensional / Matrices) 🖼️
+🧠 Logic:
+2D Array ko Array of Arrays ya Matrix kehte hain. Ismein data rows (panktiyon) aur columns (stambhon) ke roop mein store hota hai. Access karne ke liye do indices: [row_index][col_index] ki zaroorat hoti hai.
+
+📌 Example:
+
+Java
+
+// 2x3 matrix
+int[][] matrix = {
+    {1, 2, 3},
+    {4, 5, 6}
+};
+
+// Accessing the element at Row 1, Column 2 (value 6)
+System.out.println(matrix[1][2]); // 6
+🔤 Java Code:
+Java
+
+public class TwoDArrayExample {
+    public static void main(String[] args) {
+        // 3x3 array initialization
+        int[][] grid = new int[3][3];
+        int value = 1;
+
+        // Nested loop se values assign karna
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                grid[i][j] = value++;
+            }
+        }
+
+        // Nested loop se values print karna
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                System.out.print(grid[i][j] + "\t");
+            }
+            System.out.println(); // Har row ke baad nayi line
+        }
+    }
+}
+
+/* Output:
+1	2	3	
+4	5	6	
+7	8	9
+*/
+🧾 Notebook Points:
+Java
+
+📘 2D Array:
+→ Matrix (Rows x Columns)
+→ Requires two indices: [row][col]
+
+🔢 Access: matrix[r][c]
+✅ Summary Table:
+🏷️ Array Type	⚙️ Dimension	🧮 Indices
+1D Array	Single (Row)	arr[i]
+2D Array	Multi (Row x Column)	matrix[i][j]
