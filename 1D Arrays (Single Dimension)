@@ -1,0 +1,50 @@
+DSA-008
+1. 1D Arrays (Single Dimension) 📏
+🧠 Logic:
+Array ek fixed-size ka container hai jo ek hi data type ke elements ko store karta hai. Indexing hamesha 0 se shuru hoti hai.
+
+📌 Example:
+
+Java
+
+// Declaration, initialization, and access
+int[] arr = new int[3];
+arr[0] = 10;
+arr[1] = 20;
+
+System.out.println(arr[0]); // 10
+System.out.println(arr.length); // 3
+🔤 Java Code:
+Java
+
+public class ArrayExample {
+    public static void main(String[] args) {
+        // Initialization
+        int[] numbers = {10, 20, 30, 40};
+
+        // Traversing (Elements ko print karna)
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print(numbers[i] + " ");
+        }
+        
+        System.out.println(); // Newline
+
+        // Enhanced For Loop (For-Each)
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+// Output:
+// 10 20 30 40 
+// 10 20 30 40 
+🧾 Notebook Points:
+Java
+
+📘 1D Array:
+→ Fixed size container
+→ Same data type elements
+→ Index starts from 0
+
+🔢 Access: arr[i]
