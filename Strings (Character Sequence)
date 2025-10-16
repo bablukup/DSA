@@ -1,0 +1,61 @@
+DSA-009A
+1. Strings (Character Sequence) 📝
+🧠 Logic:
+String Java mein characters ki ek sequence (shrankhla) hoti hai. Strings immutable (aparivartansheel) hoti hain, jiska matlab hai ki ek baar banne ke baad unki value badli nahi ja sakti. Jab hum koi naya change karte hain, toh ek nayi string ban jaati hai.
+
+📌 Example:
+
+Java
+
+// String declaration
+String name = "Java Coding"; 
+
+// Important methods
+System.out.println(name.length()); // 11
+System.out.println(name.charAt(2)); // v (Index 2 par)
+System.out.println(name.indexOf('C')); // 5
+
+// Immutability: Changes create a new String
+String newName = name.replace('a', 'o'); 
+System.out.println(name);    // Original: Java Coding
+System.out.println(newName); // New: Jovo Coding
+🔤 Java Code:
+Java
+
+public class StringBasics {
+    public static void main(String[] args) {
+        String firstName = "Rahul";
+        String lastName = "Sharma";
+
+        // Concatenation (Do strings ko jodna)
+        String fullName = firstName + " " + lastName;
+        System.out.println("Full Name: " + fullName); 
+        
+        // Comparing Strings
+        String s1 = "hello";
+        String s2 = "Hello";
+        
+        // Use equals() to check content equality
+        if (s1.equals(s2)) {
+            System.out.println("Strings are same (content)");
+        } else {
+            System.out.println("Strings are different"); // This will print
+        }
+
+        // Converting to lowercase
+        System.out.println("Lowercase: " + s2.toLowerCase()); 
+    }
+}
+// Output:
+// Full Name: Rahul Sharma
+// Strings are different
+// Lowercase: hello
+🧾 Notebook Points:
+Java
+
+📘 String:
+→ Sequence of characters
+→ Immutable (Value change nahi hoti, naya object banta hai)
+→ Indexing 0 se shuru.
+
+🔢 Compare: string1.equals(string2)
