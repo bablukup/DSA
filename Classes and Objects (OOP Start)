@@ -1,0 +1,62 @@
+Classes and Objects (OOP Start) 🧱
+🧠 Logic: Class ek blueprint (naksha) ya template hai. Yeh define karta hai ki ek object kaisa dikhega (properties/variables) aur kya kar sakta hai (behaviour/methods). 
+Object us class ka ek instance (vastavik roop) hai. Jab hum new keyword use karte hain, toh memory mein ek object banta hai.
+📌 Example: 
+Java// Creating a simple 'Car' Class
+class Car {
+    String color;    // Property/Variable
+    int maxSpeed;    // Property/Variable
+
+    void drive() {   // Method/Behaviour
+        System.out.println(color + " car is driving.");
+    }
+}
+
+// Creating an object in the Main method
+Car c1 = new Car(); // Object created
+c1.color = "Red";   // Property assigned
+c1.drive();         // Method called
+🔤 Java Code:Java// Class Definition (Usually in a separate file)
+class Student {
+    String name;
+    int rollNo;
+
+    // Method to display information
+    void printInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Roll No: " + rollNo);
+    }
+}
+
+public class OOPBasics {
+    public static void main(String[] args) {
+        // Object Creation:
+        Student s1 = new Student();
+        
+        // Setting data:
+        s1.name = "Alok";
+        s1.rollNo = 101;
+        
+        // Using object method:
+        s1.printInfo();
+        
+        // Another object:
+        Student s2 = new Student();
+        s2.name = "Priya";
+        s2.rollNo = 102;
+        s2.printInfo();
+    }
+}
+
+/* Output:
+Name: Alok
+Roll No: 101
+Name: Priya
+Roll No: 102
+*/
+🧾 Notebook Points:Java📘 Class vs Object:
+→ Class: Blueprint/Template
+→ Object: Instance/Real Entity
+
+🔢 Object creation: ClassName obj = new ClassName();
+✅ Summary Table:🏗️ Topic🔑 Key Concept🎯 Main PurposeStringImmutable sequence of charactersText data store karnaClassBlueprint for an ObjectData (variables) aur functionality (methods) ko group karnaObjectInstance of a ClassReal-world entity ko represent karna
