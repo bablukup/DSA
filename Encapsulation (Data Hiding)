@@ -1,0 +1,39 @@
+Encapsulation (Data Hiding) 🔒🧠 Logic: Encapsulation OOP ka ek concept hai jismein data (variables) aur us data ko handle karne waale code (methods) ko ek single unit (Class) mein bind (baandh) kiya jata hai.Ismein hum variables ko private bana kar unhe direct outside access se bachate hain aur unhe modify/access karne ke liye public Getter aur Setter methods ka upyog karte hain. Isse data security badhti hai.📌 Example:Javaclass Account {
+    private double balance; // Data is made private
+
+    // Getter method (To read/get the data)
+    public double getBalance() {
+        return balance;
+    }
+
+    // Setter method (To write/set the data, often with validation)
+    public void setBalance(double amount) {
+        if (amount >= 0) { // Validation check
+            balance = amount;
+        }
+    }
+}
+🔤 Java Code:Javapublic class EncapsulationDemo {
+    public static void main(String[] args) {
+        Account myAccount = new Account();
+        
+        // Direct access not allowed because 'balance' is private:
+        // myAccount.balance = 10000; // Error!
+
+        // Setting data using Setter
+        myAccount.setBalance(5000.50);
+        
+        // Getting data using Getter
+        System.out.println("Current Balance: " + myAccount.getBalance()); // 5000.5
+        
+        // Trying to set invalid data
+        myAccount.setBalance(-100); 
+        System.out.println("New Balance: " + myAccount.getBalance()); // Still 5000.5 (as -100 was ignored in setter)
+    }
+}
+🧾 Notebook Points:Java📘 Encapsulation:
+→ Data aur Methods ko ek unit (Class) mein bind karna
+→ Data Hiding: Variables ko 'private' bana kar
+
+🔢 Access: public Getters (read) aur Setters (write) ke through
+✅ Summary Table:🏗️ Concept💡 Goal🛠️ ImplementationConstructorObject initializationClass-named method (no return type)EncapsulationData hiding and securityPrivate variables, Public Getters/Setters
