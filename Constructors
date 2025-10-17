@@ -1,0 +1,64 @@
+DSA-010
+1. Constructors 🏗️
+🧠 Logic:
+Constructor ek special method hai jiska naam class ke naam jaisa hi hota hai aur iski koi return type nahi hoti (even void bhi nahi).
+
+Iska kaam Object ko initialize karna hai. Jab bhi hum new keyword ka upyog karke object banate hain, constructor automatically call hota hai.
+
+📌 Example:
+
+Java
+
+class Dog {
+    String name;
+
+    // Constructor defined here
+    Dog(String n) {
+        name = n; // Initializes the 'name' property
+        System.out.println("Dog object created!");
+    }
+}
+
+// Main method mein
+Dog d1 = new Dog("Buddy"); // Constructor call hua
+System.out.println(d1.name); // Output: Buddy
+🔤 Java Code:
+Java
+
+class Rectangle {
+    int length;
+    int width;
+
+    // Parameterized Constructor
+    Rectangle(int l, int w) {
+        length = l;
+        width = w;
+    }
+    
+    // Default Constructor (Optional, Java khud bana deta hai agar koi nahi ho)
+    // Rectangle() {} 
+
+    int calculateArea() {
+        return length * width;
+    }
+}
+
+public class ConstructorBasics {
+    public static void main(String[] args) {
+        // Object creation (Constructor call ke saath)
+        Rectangle r1 = new Rectangle(10, 5); 
+        
+        System.out.println("Length: " + r1.length);   // Output: 10
+        System.out.println("Area: " + r1.calculateArea()); // Output: 50
+    }
+}
+🧾 Notebook Points:
+Java
+
+📘 Constructor:
+→ Special method to initialize an Object
+→ Same name as Class
+→ No return type
+→ Automatically called on 'new'
+
+🔢 Types: Default, Parameterized
