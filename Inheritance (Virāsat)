@@ -1,0 +1,51 @@
+DSA-0111. 
+Inheritance (Virāsat) 👨‍👩‍👦
+🧠 Logic:Inheritance OOP ka ek mechanism hai jismein ek class (child class ya Subclass) doosri class (parent class ya Superclass) ki properties (variables) aur methods ko acquire (grahan) kar leti hai.Iska mukhya uddeshya hai Code Reusability (code ka punah upyog) aur "is-a" relationship (jaise ki "Dog is a Animal") establish karna. Hum $\mathbf{`extends`}$ keyword ka upyog karte hain.📌 Example:Javaclass Vehicle {        // Parent Class
+    void move() {
+        System.out.println("Vehicle is moving.");
+    }
+}
+
+class Car extends Vehicle { // Child Class
+    void drive() {
+        System.out.println("Car is driving.");
+    }
+}
+
+// Main method mein
+Car myCar = new Car();
+myCar.drive(); // Car ka apna method
+myCar.move();  // Vehicle ka inherited method
+🔤 Java Code:Javaclass Animal {
+    String habitat = "Earth";
+
+    void eat() {
+        System.out.println("Animal is eating.");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking.");
+    }
+}
+
+public class InheritanceDemo {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        
+        // Inherited Property
+        System.out.println("Habitat: " + d.habitat); // Output: Earth
+        
+        // Inherited Method
+        d.eat(); // Output: Animal is eating.
+        
+        // Dog's own Method
+        d.bark(); // Output: Dog is barking.
+    }
+}
+🧾 Notebook Points:Java📘 Inheritance:
+→ Ek class doosri class ke features inherit karti hai
+→ Goal: Code Reusability
+→ Keyword: 'extends'
+→ Terminology: Superclass (Parent) & Subclass (Child)
