@@ -1,0 +1,46 @@
+Polymorphism (Bahu-roopta) 🎭
+🧠 Logic:Polymorphism ka matlab hai "many forms" (bahut saare roop). Yeh OOP ka woh feature hai jisse ek hi cheez (jaise ki ek method) alag-alag situations mein alag-alag tareeke se behave karti hai.Java mein yeh do tarah se achieve hota hai:Method Overloading (Compile-time): Ek hi class mein same naam ke multiple methods, bas unke parameters alag hote hain.Method Overriding (Runtime): Parent aur Child class mein same method signature wala method, jahan Child class Parent ke method ko replace kar deta hai.📌 Example (Overloading):Javaclass Calculator {
+    // 1. Adds two integers
+    int add(int a, int b) { 
+        return a + b;
+    }
+    // 2. Adds three integers (Overloaded method)
+    int add(int a, int b, int c) { 
+        return a + b + c;
+    }
+}
+
+// Caller code
+Calculator calc = new Calculator();
+System.out.println(calc.add(2, 3));      // Calls (1), Output: 5
+System.out.println(calc.add(2, 3, 5));   // Calls (2), Output: 10
+🔤 Java Code (Method Overriding):Javaclass Parent {
+    void show() {
+        System.out.println("Parent's show method.");
+    }
+}
+
+class Child extends Parent {
+    // Method Overriding: Same method signature as Parent
+    @Override
+    void show() { 
+        System.out.println("Child's customized show method.");
+    }
+}
+
+public class PolymorphismDemo {
+    public static void main(String[] args) {
+        Parent p = new Parent();
+        Child c = new Child();
+        
+        p.show(); // Output: Parent's show method.
+        c.show(); // Output: Child's customized show method. (Overridden)
+    }
+}
+🧾 Notebook Points:Java📘 Polymorphism:
+→ Means "Many Forms" (Bahu-roopta)
+
+🔢 Types:
+1. Overloading (Compile-time): Same name, different parameters.
+2. Overriding (Runtime): Same name, same parameters (in Subclass).
+✅ Summary Table:🏗️ Concept💡 Goal🛠️ MechanismInheritanceCode Reusability ("is-a" relation)extends keywordPolymorphismSingle interface, multiple behavioursMethod Overloading / Overriding
