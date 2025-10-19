@@ -1,0 +1,48 @@
+DSA-0121. Abstraction (Amūrta) 💡🧠 Logic:Abstraction ka matlab hai zaroori details dikhana aur internal working (implementation details) ko chhupana. Jaise ki aap car chalaate hain, toh aap sirf accelerator aur brake ka istemaal karte hain, engine ke andar kya ho raha hai, uski details aap se chhupai jaati hain.Java mein yeh do tareeke se achieve hota hai:Abstract Classes (using $\mathbf{`abstract`}$ keyword)Interfaces (next topic)📌 Example:Java// Abstract Class (Adhoori Class)
+abstract class Bank {
+    // Abstract method: Sirf declaration hai, body nahi hai
+    abstract void loanInterestRate(); 
+
+    // Regular method (Concrete method)
+    void displayMsg() { 
+        System.out.println("Welcome to Bank.");
+    }
+}
+
+class SBI extends Bank {
+    // Abstract method ko yahan define (override) karna zaroori hai
+    void loanInterestRate() {
+        System.out.println("SBI Rate: 8.5%");
+    }
+}
+🔤 Java Code:Javaabstract class Vehicle {
+    abstract void start(); // Abstract method (no body)
+
+    void stop() {
+        System.out.println("Vehicle stopped.");
+    }
+}
+
+class Car extends Vehicle {
+    // Abhi Car class concrete hai, toh ise start() method implement karna hoga
+    @Override
+    void start() {
+        System.out.println("Car starts with key.");
+    }
+}
+
+public class AbstractionDemo {
+    public static void main(String[] args) {
+        // Vehicle v = new Vehicle(); // ERROR! Abstract class ka object nahi ban sakta
+        
+        Car c = new Car();
+        c.start(); // Output: Car starts with key.
+        c.stop();  // Output: Vehicle stopped.
+    }
+}
+🧾 Notebook Points:Java📘 Abstraction:
+→ Essential details dikhana, implementation chhupana
+→ Achieved by: Abstract Classes (0-100% Abstraction)
+→ Keyword: 'abstract'
+
+🔢 Rule: Abstract class ka object
