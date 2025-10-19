@@ -1,0 +1,50 @@
+Interfaces (Anubandh) 🤝🧠 Logic:Interface Java mein ek blueprint hai jo 100% Abstraction achieve karta hai. Yeh class ko batata hai ki use kya-kya karna chahiye, lekin kaise karna hai yeh nahi batata.Interface mein methods default roop se $\mathbf{`public~abstract`}$ hote hain. Koi bhi class jo interface ko apnati hai use $\mathbf{`implements`}$ keyword ka upyog karna padta hai aur uske sabhi abstract methods ko define karna padta hai.📌 Example:Javainterface Swimmer {          // Interface
+    void swim();             // By default: public abstract
+}
+
+interface Runner {
+    void run();
+}
+
+// A single class can implement multiple interfaces (Multiple Inheritance of Type)
+class Human implements Swimmer, Runner {
+    public void swim() { // Methods must be public
+        System.out.println("Human is swimming.");
+    }
+    public void run() {
+        System.out.println("Human is running.");
+    }
+}
+🔤 Java Code:Javainterface Speaker {
+    void speak();
+}
+
+class Robot implements Speaker {
+    @Override
+    public void speak() {
+        System.out.println("Robot speaking in digital voice.");
+    }
+}
+
+class Person implements Speaker {
+    @Override
+    public void speak() {
+        System.out.println("Person speaking naturally.");
+    }
+}
+
+public class InterfaceDemo {
+    public static void main(String[] args) {
+        Robot r = new Robot();
+        Person p = new Person();
+        
+        r.speak(); // Output: Robot speaking in digital voice.
+        p.speak(); // Output: Person speaking naturally.
+    }
+}
+🧾 Notebook Points:Java📘 Interface:
+→ 100% Abstraction
+→ Methods: public abstract
+→ Keyword: 'implements'
+→ Java Multiple Inheritance (type) interfaces se possible hai.
+✅ Summary Table:🏗️ Feature💡 Degree of Abstraction🛠️ Keyword❓ Object CreationAbstract Class0% to 100%abstract / extends❌ Not PossibleInterface100%interface / implements❌ Not Possible
