@@ -1,0 +1,53 @@
+ArrayList (Dynamic Array) 📦
+🧠 Logic:ArrayList Java Collections Framework ka part hai. Yeh ek resizable array hai, jiska matlab hai ki yeh $\mathbf{dynamic}$ roop se size badha aur ghata sakta hai. Jabki traditional arrays ka size $\mathbf{fixed}$ hota hai.ArrayList sirf Objects (non-primitive types, jaise Integer, String) store karta hai, primitive types (int, char) nahi.📌 Example:Javaimport java.util.ArrayList;
+
+// Integer type ke elements ke liye ArrayList banaya
+ArrayList<Integer> list = new ArrayList<>(); 
+
+// Elements add karna
+list.add(10);
+list.add(20);
+
+// Elements access karna
+System.out.println(list.get(0)); // 10
+
+// Size badal gaya
+list.add(30);
+System.out.println(list.size()); // 3
+🔤 Java Code:Javaimport java.util.ArrayList;
+
+public class ArrayListDemo {
+    public static void main(String[] args) {
+        // String type ka ArrayList
+        ArrayList<String> fruits = new ArrayList<>();
+        
+        // Add elements
+        fruits.add("Apple"); 
+        fruits.add("Banana"); 
+        fruits.add("Orange"); 
+
+        // Print the full list
+        System.out.println("List: " + fruits); 
+
+        // Remove element by index (Banana hat jayega)
+        fruits.remove(1);
+        
+        // Check if an element exists
+        System.out.println("Contains Apple? " + fruits.contains("Apple")); // true
+
+        // Print list after removal
+        System.out.println("After removal: " + fruits);
+    }
+}
+/* Output:
+List: [Apple, Banana, Orange]
+Contains Apple? true
+After removal: [Apple, Orange]
+*/
+🧾 Notebook Points:Java📘 ArrayList:
+→ Resizable/Dynamic Array
+→ Fixed size nahi hota
+→ Collections Framework ka hissa
+
+🔢 Methods: add(), get(index), remove(index), size()
+✅ Summary Table:🏗️ Concept💡 Purpose🛠️ ImplementationException HandlingRuntime errors ko manage karnatry-catch-finally blocksArrayListDynamic-sized list of objectsnew ArrayList<Type>()
