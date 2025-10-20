@@ -1,0 +1,39 @@
+DSA-0131. Exception Handling 🚧
+🧠 Logic:Exception ek event hai jo program ke normal flow ko disturb karta hai. Exception Handling is event ko manage karne ka mechanism hai taaki program crash na ho aur theek se chalta rahe.Iske liye hum $\mathbf{`try`}$, $\mathbf{`catch`}$, aur $\mathbf{`finally`}$ blocks ka upyog karte hain:try: Woh code jismein exception aane ki sambhavna hai.catch: Exception aane par execute hone wala code (error ko handle karta hai).finally: Woh code jo hamesha execute hota hai, chahe exception aaye ya na aaye (jaise resources ko close karna).📌 Example:Javatry {
+    // Code jahan error aa sakti hai
+    int result = 10 / 0; 
+} catch (ArithmeticException e) {
+    // Error ko handle kiya
+    System.out.println("Cannot divide by zero.");
+} finally {
+    // Ye hamesha run hoga
+    System.out.println("Operation attempted.");
+}
+🔤 Java Code:Javapublic class ExceptionDemo {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3};
+
+        try {
+            // ArrayIndexOutOfBoundsException aane ki sambhavna
+            System.out.println("Accessing element: " + arr[5]); 
+            
+            // Ye line tabhi chalti hai jab upar exception na aaye
+            System.out.println("This is safe code."); 
+        } 
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Array index out of bounds!");
+        } 
+        finally {
+            System.out.println("Program cleanup done.");
+        }
+    }
+}
+/* Output:
+Error: Array index out of bounds!
+Program cleanup done.
+*/
+🧾 Notebook Points:Java📘 Exception Handling:
+→ Program ka normal flow disturb hone se bachana
+→ Blocks: try (risky code), catch (handler), finally (hamesha run)
+
+🔢 Types: Checked (compile-time) aur Unchecked (runtime)
