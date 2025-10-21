@@ -1,0 +1,49 @@
+DSA-0141. HashMap (Key-Value Pairs) 🔑
+🧠 Logic:HashMap Java Collections Framework ka ek hissa hai jo data ko $\mathbf{Key-Value~Pairs}$ ke roop mein store karta hai. Yeh Map interface ko implement karta hai.Har $\mathbf{Key}$ $\mathbf{unique}$ honi chahiye, aur woh uske corresponding $\mathbf{Value}$ ko access karne ke liye istemaal hoti hai. Yeh data ko store karne aur retrieve (wapas nikalne) ka sabse $\mathbf{fast}$ tareeka hai.📌 Example:Javaimport java.util.HashMap;
+
+// Key: String (Country), Value: Integer (Population)
+HashMap<String, Integer> map = new HashMap<>(); 
+
+// Data add karna
+map.put("India", 1400); 
+map.put("China", 1420); 
+
+// Value access karna (Key ke through)
+System.out.println(map.get("India")); // 1400
+
+// Key exist karta hai ya nahi check karna
+System.out.println(map.containsKey("USA")); // false
+🔤 Java Code:Javaimport java.util.HashMap;
+import java.util.Map;
+
+public class HashMapDemo {
+    public static void main(String[] args) {
+        HashMap<String, String> capitalCities = new HashMap<>();
+        
+        // Adding elements (put method)
+        capitalCities.put("India", "New Delhi");
+        capitalCities.put("France", "Paris");
+        capitalCities.put("Japan", "Tokyo");
+        
+        // Iterating through all entries (Key-Value pairs)
+        for (Map.Entry<String, String> entry : capitalCities.entrySet()) {
+            System.out.println("Country: " + entry.getKey() + ", Capital: " + entry.getValue());
+        }
+        
+        // Removing a pair
+        capitalCities.remove("France"); 
+        
+        System.out.println("Size after removal: " + capitalCities.size()); // 2
+    }
+}
+/* Output:
+Country: India, Capital: New Delhi
+Country: France, Capital: Paris
+Country: Japan, Capital: Tokyo
+Size after removal: 2
+*/
+🧾 Notebook Points:Java📘 HashMap:
+→ Stores data as Key-Value Pairs
+→ Key must be unique
+
+🔢 Methods: put(k, v), get(k), remove(k), containsKey(k)
