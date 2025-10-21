@@ -1,0 +1,50 @@
+'this' Keyword (Self Reference) 🧍
+🧠 Logic:$\ mathbf {`this`}$ keyword ek reference variable hai jo hamesha us object ki taraf ishara karta hai jisne method ko call kiya hai (yaani, current object).Iska mukhya upyog Class ke andar $\mathbf{Instance~Variables}$ (object variables) aur $\mathbf{Local~Variables}$ (method ya constructor ke andar ke variables) ke beech ke naam ke conflict (takraav) ko hatane ke liye hota hai.📌 Example:Javaclass Student {
+    String name;  // Instance Variable
+
+    // Constructor mein 'name' local variable bhi hai
+    Student(String name) { 
+        // local variable 'name' instance variable 'name' ko shadow kar raha hai
+        // isliye hum instance variable ko refer karne ke liye 'this.name' use karte hain
+        this.name = name; 
+    }
+
+    void printName() {
+        System.out.println(this.name); // Current object ka name print karega
+    }
+}
+🔤 Java Code:Javaclass Box {
+    int height;
+    
+    // 1. Constructor mein this ka upyog
+    Box(int height) {
+        this.height = height; 
+    }
+    
+    // 2. Doosre constructor ko call karne ke liye this ka upyog (Constructor Chaining)
+    Box(int h, int w) {
+        this(h); // Calls the single-parameter constructor
+        // width = w;
+    }
+    
+    // 3. Current object ko method ke argument mein pass karna
+    void compare(Box otherBox) {
+        if (this.height > otherBox.height) {
+            System.out.println("Current box is taller.");
+        }
+    }
+}
+
+public class ThisKeywordDemo {
+    public static void main(String[] args) {
+        Box b1 = new Box(20);
+        Box b2 = new Box(10);
+        
+        b1.compare(b2); // Output: Current box is taller. (b1 'this' hai)
+    }
+}
+🧾 Notebook Points:Java📘 'this' Keyword:
+→ Reference to the Current Object
+→ Used to resolve conflict b/w Instance and Local variables (e.g., this.name = name)
+→ Used to call one constructor from another (e.g., this(parameters))
+✅ Summary Table:🏗️ Concept💡 Purpose🛠️ ContextHashMapKey-Value data storageFast data retrieval (O(1) average)this KeywordCurrent object ko reference karnaConstructor/Method mein name conflict resolve karna
