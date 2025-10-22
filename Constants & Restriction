@@ -1,0 +1,45 @@
+'final' Keyword (Constants & Restriction) 🚫
+🧠 Logic:final keyword ka upyog kisi entity ko constant ya restrict (pratibandhit) karne ke liye kiya jata hai. Iske teen mukhya upyog hain:Final Variable: Value set hone ke baad badli nahi ja sakti (constant ban jata hai).Final Method: Is method ko override nahi kiya ja sakta (Inheritance mein).Final Class: Is class ko inherit nahi kiya ja sakta (koi aur class ise extends nahi kar sakti).📌 Example:Java// Final Variable
+final double PI = 3.14159; // Constant value
+
+class Parent {
+    final void display() {
+        System.out.println("Final method.");
+    }
+}
+
+class Child extends Parent {
+    // void display() { } // ERROR! Final method cannot be overridden
+}
+🔤 Java Code:Javafinal class BaseVehicle { // Is class ko inherit nahi kiya ja sakta
+    public void start() {
+        System.out.println("Base Vehicle started.");
+    }
+}
+
+class Constants {
+    // Conventionally, final static variables are ALL_CAPS
+    public static final int MAX_USERS = 100; 
+}
+
+public class FinalKeywordDemo {
+    public static void main(String[] args) {
+        // Final variable
+        final int LIMIT = 50;
+        // LIMIT = 60; // ERROR! Cannot reassign final variable
+        
+        System.out.println("Limit: " + LIMIT); // 50
+        System.out.println("Max Users: " + Constants.MAX_USERS); // 100
+        
+        // Example: BaseVehicle ko inherit nahi kiya ja sakta.
+        // class Truck extends BaseVehicle { } // Compilation Error
+    }
+}
+🧾 Notebook Points:Java📘 final:
+→ Used for restriction and constants
+
+🔢 Upyog:
+1. Variable: Value cannot be changed (Constant).
+2. Method: Cannot be overridden.
+3. Class: Cannot be inherited (extended).
+✅ Summary Table:🏗️ Keyword💡 Purpose🛠️ Scope/EffectstaticShared, Class-level membershipSingle copy in memory (shared)finalRestrict, Define constantsValue/Method/Class cannot be changed/extended
