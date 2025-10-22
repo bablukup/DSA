@@ -1,0 +1,67 @@
+DSA-015
+1. 'static' Keyword (Class-level Member) 🏗️
+🧠 Logic:
+static keyword kisi variable, method, ya block ko class se jodta hai, object se nahi. Iska matlab hai ki:
+
+Static Variable (Class Variable): Yeh sabhi objects dwara shared hota hai. Memory mein sirf ek copy banti hai.
+
+Static Method: Isko call karne ke liye object banane ki zaroorat nahi hoti; ise Class Name se seedhe call kiya ja sakta hai (ClassName.methodName()).
+
+📌 Example:
+
+Java
+
+class Company {
+    // Static variable (Shared by all employees)
+    static String ceo = "Ramesh"; 
+
+    String name;
+
+    void employeeInfo() {
+        // Static variable ko method mein use kiya
+        System.out.println(name + " works for CEO " + ceo); 
+    }
+}
+
+// Main method mein
+Company e1 = new Company();
+e1.name = "Alok";
+e1.employeeInfo(); // Output: Alok works for CEO Ramesh
+
+// Static variable ko class name se access kiya
+System.out.println(Company.ceo); // Output: Ramesh 
+🔤 Java Code:
+Java
+
+class Counter {
+    static int count = 0; // Shared counter
+
+    Counter() {
+        count++; // Har naye object par count badhega
+    }
+
+    // Static method (Can only access static members)
+    static void displayCount() {
+        System.out.println("Total Objects created: " + count);
+    }
+}
+
+public class StaticKeywordDemo {
+    public static void main(String[] args) {
+        Counter c1 = new Counter();
+        Counter c2 = new Counter();
+        Counter c3 = new Counter();
+        
+        // Static method ko Class name se call kiya
+        Counter.displayCount(); // Output: Total Objects created: 3
+    }
+}
+🧾 Notebook Points:
+Java
+
+📘 static:
+→ Class-level member (Object se independent)
+→ Static variables: Shared by all objects (single copy)
+→ Static methods: Can be called via ClassName.method()
+
+🔢 Rule: Static methods sirf static variables/methods ko access kar sakte hain.
