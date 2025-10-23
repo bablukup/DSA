@@ -1,0 +1,47 @@
+DSA-0161. Multithreading (Concurrent Execution) 🏃‍♀️💨
+🧠 Logic:Multithreading is a process that allows $\mathbf{multiple~parts}$ ($\mathbf{threads}$) of a program to execute $\mathbf{concurrently}$ (at the same time or overlapping in time). This maximizes CPU utilization and improves program performance.There are two main ways to create a thread in Java:By $\mathbf{extending}$ the $\mathbf{`Thread`}$ class.By $\mathbf{implementing}$ the $\mathbf{`Runnable`}$ interface (which is the preferred method).Thread execution starts by calling the $\mathbf{`start()`}$ method, which internally calls the $\mathbf{`run()`}$ method.📌 Example:Java// Easiest way to create a thread
+class MyThread extends Thread {
+    @Override
+    public void run() {
+        System.out.println("Thread is running.");
+    }
+}
+
+// In the Main method
+MyThread t1 = new MyThread();
+t1.start(); // Output: Thread is running.
+🔤 Java Code (Runnable Interface):Javaclass MyRunnable implements Runnable {
+    @Override
+    public void run() {
+        for (int i = 1; i <= 3; i++) {
+            System.out.println(Thread.currentThread().getName() + " Count: " + i);
+            try {
+                Thread.sleep(100); // Pause for 100 milliseconds
+            } catch (InterruptedException e) {}
+        }
+    }
+}
+
+public class MultithreadingDemo {
+    public static void main(String[] args) {
+        // Runnable object passed to Thread constructor
+        Thread tA = new Thread(new MyRunnable(), "Thread-A"); 
+        Thread tB = new Thread(new MyRunnable(), "Thread-B"); 
+        
+        tA.start(); // Both threads start execution almost simultaneously
+        tB.start();
+    }
+}
+/* Output (Order may vary due to concurrency):
+Thread-A Count: 1
+Thread-B Count: 1
+Thread-A Count: 2
+Thread-B Count: 2
+...
+*/
+🧾 Notebook Points:Java📘 Multithreading:
+→ Running multiple tasks simultaneously
+→ Goal: Increase CPU efficiency
+
+🔢 Creation: 1. Extend Thread, 2. Implement Runnable (Preferred)
+➡️ Execution: start() calls run()
