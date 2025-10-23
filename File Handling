@@ -1,0 +1,41 @@
+File Handling (Java I/O Streams) 💾
+🧠 Logic:Java I/O (Input/Output) deals with reading and writing data to and from files or other streams. Streams are sequences of data.Input Stream: Used to read data from a source (like a file) into the program.Output Stream: Used to write data from the program to a destination (like a file).Classes like $\mathbf{`FileWriter`}$ and $\mathbf{`FileReader`}$ are used for simple character data read/write operations. It is essential to use $\mathbf{Exception~Handling}$ (try-catch-finally) for all file operations.📌 Example:Javaimport java.io.FileWriter;
+import java.io.IOException;
+
+try {
+    FileWriter writer = new FileWriter("data.txt");
+    writer.write("Hello File!"); // Writing to the file
+    writer.close();              // Important to close the stream
+} catch (IOException e) {
+    System.out.println("Error writing to file.");
+}
+🔤 Java Code (Reading a File):Javaimport java.io.FileReader;
+import java.io.IOException;
+
+public class FileReadDemo {
+    public static void main(String[] args) {
+        // try-with-resources automatically closes the reader
+        try (FileReader reader = new FileReader("data.txt")) { 
+            int character;
+            System.out.println("File Content:");
+            
+            // Reading character-by-character
+            while ((character = reader.read()) != -1) {
+                System.out.print((char) character);
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred: File not found or read error.");
+        }
+    }
+}
+/* Assuming data.txt contains "Hello File!", output:
+File Content:
+Hello File!
+*/
+🧾 Notebook Points:Java📘 File Handling:
+→ Persistent storage (Read/Write data)
+→ Mechanism: I/O Streams (Input: Read, Output: Write)
+
+🔢 Classes: FileWriter/FileReader (for character data)
+⚠️ Note: Must use Exception Handling for I/O operations.
+✅ Summary Table:🏗️ Concept💡 Goal🛠️ Main ComponentsMultithreadingConcurrent executionThread class, Runnable interfaceFile HandlingPersistent data storageI/O Streams (FileReader, FileWriter)
