@@ -1,0 +1,34 @@
+Stack (LIFO Structure) 🥞
+🧠 Logic:A Stack is an abstract data type (ADT) that follows the LIFO (Last-In, First-Out) principle. Think of a stack of plates: the last plate placed on top is the first one that must be removed.The two primary operations are:Push: Adds an element to the top of the stack.Pop: Removes the element from the top of the stack.Stacks are commonly used for function call management, expression evaluation, and backtracking algorithms.📌 Example:Java// Operations on a stack:
+// Stack is empty: []
+// Push 10: [10]
+// Push 20: [10, 20] (20 is TOP)
+// Pop: removes 20. Stack is [10] (10 is TOP)
+🔤 Java Code (Using Stack Class):Javaimport java.util.Stack;
+
+public class StackDemo {
+    public static void main(String[] args) {
+        Stack<String> books = new Stack<>();
+        
+        // 1. Push: Add elements to the top
+        books.push("Book A");
+        books.push("Book B");
+        books.push("Book C"); // C is now the TOP
+
+        // 2. Peek: View the top element without removing it
+        System.out.println("Top element (Peek): " + books.peek()); // Output: Book C
+
+        // 3. Pop: Remove and return the top element
+        String lastBook = books.pop();
+        System.out.println("Popped element: " + lastBook); // Output: Book C
+        
+        // Stack after Pop
+        System.out.println("Stack size: " + books.size()); // Output: 2
+    }
+}
+🧾 Notebook Points:Java📘 Stack:
+→ LIFO (Last-In, First-Out) principle
+→ ADT implemented using array or Linked List
+
+🔢 Operations: Push (Add to Top), Pop (Remove from Top), Peek (View Top)
+✅ Summary Table:🏗️ Structure💡 Principle🛠️ Memory AllocationLinked ListLinear, node-based sequenceNon-contiguous (Dynamic)StackLIFO (Last-In, First-Out)Contiguous or Non-contiguous
