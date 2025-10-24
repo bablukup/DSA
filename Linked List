@@ -1,0 +1,46 @@
+DSA-0181. Linked List (Dynamic Structure) 🔗
+🧠 Logic:A Linked List is a linear data structure where elements are not stored in contiguous (adjacent) memory locations, unlike arrays. Instead, each element (called a Node) is an object that contains two parts: the Data and a Reference/Pointer to the next node in the sequence.This dynamic nature makes Linked Lists efficient for inserting and deleting elements at any position ($\mathbf{O(1)}$ if the preceding node is known), but slower for random access ($\mathbf{O(n)}$).📌 Example:Java// Conceptual Node Structure
+class Node {
+    int data;
+    Node next; // Reference to the next node
+}
+
+// Representation:
+// Head -> [10 | next] -> [20 | next] -> [30 | null]
+🔤 Java Code (Basic Node and Insertion):Javaclass LinkedListNode {
+    int data;
+    LinkedListNode next;
+
+    LinkedListNode(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+public class LinkedListDemo {
+    public static void main(String[] args) {
+        // Creating nodes
+        LinkedListNode head = new LinkedListNode(10); // The start of the list
+        LinkedListNode second = new LinkedListNode(20);
+        LinkedListNode third = new LinkedListNode(30);
+
+        // Linking the nodes
+        head.next = second; // 10 points to 20
+        second.next = third; // 20 points to 30
+
+        // Traversing and printing
+        LinkedListNode current = head;
+        while (current != null) {
+            System.out.print(current.data + " -> ");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
+}
+// Output: 10 -> 20 -> 30 -> null
+🧾 Notebook Points:Java📘 Linked List:
+→ Non-contiguous memory allocation
+→ Elements: Nodes (Data + Next Pointer)
+→ Efficient for Insertion/Deletion (O(1) at known position)
+
+🔢 Access: Sequential (O(n))
