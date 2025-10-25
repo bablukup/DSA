@@ -1,0 +1,36 @@
+DSA-0191. Queue (FIFO Structure) 🚶‍♀️🚶‍♂️
+🧠 Logic:A Queue is an abstract data type (ADT) that follows the FIFO (First-In, First-Out) principle. It simulates a waiting line where the element that entered first is the first one to leave.Queues have two main ends: the Rear (or Tail), where elements are enqueued (added), and the Front (or Head), where elements are dequeued (removed).Common operations are $\mathbf{`enqueue`}$ (insert) and $\mathbf{`dequeue`}$ (remove).📌 Example:Java// Operations on a Queue:
+// Queue is empty: []
+// Enqueue 10 (Added at Rear): [10]
+// Enqueue 20: [10, 20]
+// Dequeue (Removes 10, which is Front): [20]
+// Dequeue: removes 20. Queue is []
+🔤 Java Code (Using LinkedList as Queue):Javaimport java.util.LinkedList;
+import java.util.Queue;
+
+public class QueueDemo {
+    public static void main(String[] args) {
+        // Queue is an interface, implemented by LinkedList or ArrayDeque
+        Queue<String> tasks = new LinkedList<>();
+        
+        // 1. Enqueue (add element to the rear)
+        tasks.offer("Task A"); 
+        tasks.offer("Task B"); 
+        tasks.offer("Task C"); // A is at the Front
+
+        // 2. Peek (view the front element without removing it)
+        System.out.println("Next up (Peek): " + tasks.peek()); // Output: Task A
+
+        // 3. Dequeue (remove and return the element from the front)
+        String firstTask = tasks.poll();
+        System.out.println("Completed (Poll): " + firstTask); // Output: Task A
+        
+        // Queue after Dequeue
+        System.out.println("Queue content: " + tasks); // Output: [Task B, Task C]
+    }
+}
+🧾 Notebook Points:Java📘 Queue:
+→ FIFO (First-In, First-Out) principle
+→ Ends: Front (Removal) and Rear (Insertion)
+
+🔢 Operations: offer/add (Enqueue), poll/remove (Dequeue), peek
