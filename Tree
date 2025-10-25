@@ -1,0 +1,48 @@
+Tree (Hierarchical Structure) 🌳
+🧠 Logic:A Tree is a non-linear, hierarchical data structure that organizes data elements (called Nodes) in a structured way. Unlike linear structures (arrays, lists, stacks, queues), elements in a tree are connected in a parent-child relationship.Key terms:Root: The topmost node in the tree (has no parent).Child: A node connected to another node one level below.Leaf: A node with no children.Edge: The link connecting one node to another.A Binary Tree is a specific type where each node has at most two children (left and right).📌 Example:Java// Conceptual Node Structure
+class TreeNode {
+    int data;
+    TreeNode left;  // Reference to the left child
+    TreeNode right; // Reference to the right child
+}
+
+// Tree Structure:
+//         (Root)
+//          10
+//         /  \
+//      (Left)  (Right)
+//       5      15
+🔤 Java Code (Basic Node and Creation):Javaclass BinaryTreeNode {
+    int data;
+    BinaryTreeNode left;
+    BinaryTreeNode right;
+
+    BinaryTreeNode(int data) {
+        this.data = data;
+    }
+}
+
+public class TreeDemo {
+    public static void main(String[] args) {
+        // Creating the root
+        BinaryTreeNode root = new BinaryTreeNode(10);
+        
+        // Connecting children
+        root.left = new BinaryTreeNode(5);
+        root.right = new BinaryTreeNode(15);
+        
+        // Further connecting a grandchild
+        root.left.right = new BinaryTreeNode(7);
+        
+        System.out.println("Root Data: " + root.data);     // Output: 10
+        System.out.println("Left Child Data: " + root.left.data); // Output: 5
+        System.out.println("Grandchild Data: " + root.left.right.data); // Output: 7
+    }
+}
+🧾 Notebook Points:Java📘 Tree:
+→ Non-linear, Hierarchical data structure
+→ Root: Top node (no parent)
+→ Leaf: Node with no children
+
+🔢 Binary Tree: Each node has max 2 children (left, right)
+✅ Summary Table:🏗️ Structure💡 Principle🛠️ Insertion/RemovalQueueFIFO (First-In, First-Out)Rear (Insert), Front (Remove)TreeHierarchical (Parent-Child)Complex, depends on Tree type (e.g., BST rules)
