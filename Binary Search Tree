@@ -1,0 +1,46 @@
+Binary Search Tree (BST) 🔎
+🧠 Logic:A Binary Search Tree (BST) is a special type of Binary Tree that maintains the Binary Search Property to allow for efficient searching, insertion, and deletion ($\mathbf{O(\log n)}$ in the average case).The BST property is:All nodes in the left subtree of a node have a value $\mathbf{less~than}$ the node's value.All nodes in the right subtree of a node have a value $\mathbf{greater~than}$ the node's value.Both the left and right subtrees must also be BSTs.Inorder traversal of a BST always yields the nodes in $\mathbf{sorted~order}$.📌 Example:Java// BST Example:
+//         10 (Root)
+//         /  \
+//       5     15
+// 5 < 10, 15 > 10. Property maintained.
+🔤 Java Code (BST Insertion): Javaclass BSTNode {
+    int data;
+    BSTNode left, right;
+    public BSTNode(int data) { this.data = data; }
+}
+
+public class BSTInsertion {
+    public static BSTNode insert(BSTNode root, int value) {
+        if (root == null) {
+            return new BSTNode(value); // New node becomes the root
+        }
+        
+        if (value < root.data) {
+            // Go left
+            root.left = insert(root.left, value);
+        } else if (value > root.data) {
+            // Go right
+            root.right = insert(root.right, value);
+        }
+        
+        return root; // Return the unchanged root pointer
+    }
+
+    public static void main(String[] args) {
+        BSTNode root = null;
+        root = insert(root, 50);
+        insert(root, 30);
+        insert(root, 70);
+        
+        System.out.println("Root is: " + root.data); // 50
+        System.out.println("Left Child is: " + root.left.data); // 30
+    }
+}
+🧾 Notebook Points:Java📘 BST:
+→ Binary Tree with Search Property
+→ Left Child < Root
+→ Right Child > Root
+
+🔢 Time Complexity: O(log n) average for Search/Insert/Delete
+✅ Summary Table:🏗️ Concept💡 Goal🛠️ ImplementationTree TraversalSystematic node visitingRecursion (DFS) or Queue (BFS)Binary Search TreeEfficient sorted data managementRecursive insertion/search based on value
