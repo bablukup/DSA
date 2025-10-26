@@ -1,0 +1,44 @@
+DSA-0201. Tree Traversal (Visiting Nodes) 🗺️
+🧠 Logic:Tree Traversal refers to the process of visiting every node in a tree exactly once in a systematic way. There are two main categories of traversal:Depth-First Search (DFS): Explores as far as possible down one branch before backtracking. It includes three methods:Inorder: $\mathbf{Left} \rightarrow \mathbf{Root} \rightarrow \mathbf{Right}$ (Commonly used in BSTs).Preorder: $\mathbf{Root} \rightarrow \mathbf{Left} \rightarrow \mathbf{Right}$ (Used to copy a tree).Postorder: $\mathbf{Left} \rightarrow \mathbf{Right} \rightarrow \mathbf{Root}$ (Used to delete a tree).Breadth-First Search (BFS): Visits nodes level by level (using a Queue data structure).📌 Example (Inorder Traversal on: Root=10, Left=5, Right=15):Java// Inorder: Left -> Root -> Right
+// Output: 5, 10, 15
+🔤 Java Code (Inorder Traversal):Javaclass TraversalNode {
+    int data;
+    TraversalNode left, right;
+    TraversalNode(int item) { this.data = item; }
+}
+
+public class TreeTraversal {
+    public static void printInorder(TraversalNode node) {
+        if (node == null) {
+            return;
+        }
+        
+        // 1. Traverse left subtree
+        printInorder(node.left);
+        
+        // 2. Visit the root
+        System.out.print(node.data + " ");
+        
+        // 3. Traverse right subtree
+        printInorder(node.right);
+    }
+
+    public static void main(String[] args) {
+        TraversalNode root = new TraversalNode(10);
+        root.left = new TraversalNode(5);
+        root.right = new TraversalNode(15);
+        
+        System.out.print("Inorder Traversal: ");
+        printInorder(root); // Output: 5 10 15 
+        System.out.println();
+    }
+}
+🧾 Notebook Points:Java📘 Tree Traversal:
+→ Visiting every node once
+
+🔢 DFS Methods:
+1. Inorder: Left-Root-Right
+2. Preorder: Root-Left-Right
+3. Postorder: Left-Right-Root
+
+➡️ BFS Method: Level by level (uses a Queue)
