@@ -1,0 +1,18 @@
+Big O Notation (Algorithm Analysis) ⏱️
+🧠 Logic:Big O Notation is a mathematical notation used to describe the efficiency of an algorithm in terms of time or space complexity. It describes the worst-case scenario (upper bound) for how the running time grows as the size of the input ($\mathbf{n}$) increases.It is crucial because it allows programmers to compare algorithms and choose the most efficient one, independent of the hardware being used. We usually ignore constants and lower-order terms.📌 Example:Java// O(1): Constant Time (Fastest)
+int element = array[5]; 
+
+// O(n): Linear Time (Scales directly with input size)
+for (int i=0; i<n; i++) { /* operation */ }
+
+// O(n^2): Quadratic Time (Scales poorly with input size)
+for (int i=0; i<n; i++) {
+    for (int j=0; j<n; j++) { /* operation */ }
+}
+🧮 Common Time Complexities:NotationNameGrowth Rate (as n increases)Example$\mathbf{O(1)}$ConstantFlat (Fastest)Accessing Array Index$\mathbf{O(\log n)}$LogarithmicVery Slow IncreaseBinary Search, BST Operations$\mathbf{O(n)}$LinearDirect IncreaseLinear Search, Traversing a List$\mathbf{O(n \log n)}$Log-linearModerate IncreaseEfficient Sorting (Merge Sort, Heap Sort)$\mathbf{O(n^2)}$QuadraticFast/Exponential IncreaseInefficient Sorting (Bubble Sort, Selection Sort)🧾 Notebook Points:Java📘 Big O Notation:
+→ Describes Algorithm Efficiency (Time/Space)
+→ Focuses on Worst-Case Scenario (Upper Bound)
+→ Ignores constants and low-order terms
+
+🔢 Goal: Compare algorithms objectively (e.g., O(n) is better than O(n^2))
+✅ Summary Table:🏗️ Topic💡 Core Concept🛠️ Typical ComplexityHeapPriority-based Binary TreeO($\log n$) for Insert/DeleteBig O NotationAlgorithm Time/Space EfficiencyVaries (O(1), O($\log n$), O(n), etc.)
