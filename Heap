@@ -1,0 +1,36 @@
+DSA-0211. Heap (Priority Structure) ⛰️
+🧠 Logic:A Heap is a complete $\mathbf{Binary~Tree}$ that satisfies the Heap Property. This structure is typically implemented using an $\mathbf{Array}$, which makes traversing its structure very fast. Heaps are essential for implementing Priority Queues.There are two types of Heaps:Max Heap: The value of the Root node must be $\mathbf{greater~than~or~equal~to}$ the values of its children. The largest element is always at the root.Min Heap: The value of the Root node must be $\mathbf{less~than~or~equal~to}$ the values of its children. The smallest element is always at the root.Operations like $\mathbf{`insert`}$ and $\mathbf{`deleteMax/Min`}$ have a time complexity of $\mathbf{O(\log n)}$.📌 Example (Max Heap):Java// Array Representation of a Max Heap:
+//   [100, 19, 36, 17, 3, 25, 1]
+// The largest element (100) is at the root (index 0).
+🤹‍♀️ Java Code (Using PriorityQueue):Javaimport java.util.Collections;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+public class HeapDemo {
+    public static void main(String[] args) {
+        // By default, PriorityQueue is a MIN HEAP
+        Queue<Integer> minHeap = new PriorityQueue<>(); 
+        minHeap.add(5);
+        minHeap.add(1);
+        minHeap.add(10);
+        
+        // Min Heap: smallest element is at the top
+        System.out.println("Min Heap Top (Peek): " + minHeap.peek()); // Output: 1
+        System.out.println("Removed: " + minHeap.poll()); // Removes 1
+
+        // Max Heap: use Collections.reverseOrder()
+        Queue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        maxHeap.add(5);
+        maxHeap.add(1);
+        maxHeap.add(10);
+        
+        // Max Heap: largest element is at the top
+        System.out.println("Max Heap Top (Peek): " + maxHeap.peek()); // Output: 10
+    }
+}
+🧾 Notebook Points:Java📘 Heap:
+→ Complete Binary Tree with Heap Property
+→ Implementation: Array-based
+→ Use: Priority Queue implementation
+
+🔢 Types: Max Heap (Max at root), Min Heap (Min at root)
