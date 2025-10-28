@@ -1,0 +1,53 @@
+DSA-022
+1. Bubble Sort (Simple Swap) 🫧
+🧠 Logic:
+Bubble Sort is the simplest sorting algorithm. It repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The process is repeated until no swaps are needed, meaning the list is sorted.
+
+In each pass, the largest unsorted element "bubbles up" to its correct position at the end of the unsorted section.
+
+It is an In-place algorithm (it doesn't require extra space) and a Stable algorithm (it preserves the relative order of equal elements).
+
+📌 Example:
+
+List: [5, 1, 4, 2, 8]
+
+Pass 1:
+(5 1) -> [1, 5, 4, 2, 8]  (5 > 1, swap)
+(5 4) -> [1, 4, 5, 2, 8]  (5 > 4, swap)
+(5 2) -> [1, 4, 2, 5, 8]  (5 > 2, swap)
+(5 8) -> [1, 4, 2, 5, 8]  (5 < 8, no swap)
+🔤 Java Code:
+Java
+
+public class BubbleSort {
+    public static void sort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            // Last i elements are already in place
+            for (int j = 0; j < n - 1 - i; j++) {
+                // Compare adjacent elements and swap if out of order
+                if (arr[j] > arr[j + 1]) {
+                    // Swap arr[j] and arr[j+1]
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] data = {5, 1, 4, 2, 8};
+        sort(data);
+        // Output: 1 2 4 5 8
+        for (int val : data) System.out.print(val + " "); 
+    }
+}
+🧾 Notebook Points:
+Java
+
+📘 Bubble Sort:
+→ Compares and swaps adjacent elements
+→ In-place, Stable algorithm
+
+🔢 Complexity: O(n^2) (Worst and Average Case)
