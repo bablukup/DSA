@@ -1,0 +1,41 @@
+2. Selection Sort (Simple Selection) ✅
+🧠 Logic:Selection Sort works by repeatedly finding the minimum element from the unsorted part of the list and putting it at the beginning of the list.The algorithm divides the list into two parts: a sorted part (at the left) and an unsorted part (at the right).In each iteration, it searches the unsorted part for the minimum element and swaps it with the element at the beginning of the unsorted section.It is also an $\mathbf{In-place}$ algorithm, but generally Unstable (relative order of equal elements may not be preserved).📌 Example:List: [64, 25, 12, 22, 11]
+
+Pass 1: Min is 11. Swap 64 and 11.
+Sorted: [11] | Unsorted: [25, 12, 22, 64]
+
+Pass 2: Min in unsorted is 12. Swap 25 and 12.
+Sorted: [11, 12] | Unsorted: [25, 22, 64]
+...
+🔤 Java Code:Javapublic class SelectionSort {
+    public static void sort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            // Find the minimum element in the unsorted array
+            int min_idx = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[min_idx]) {
+                    min_idx = j;
+                }
+            }
+            
+            // Swap the found minimum element with the element at index i
+            int temp = arr[min_idx];
+            arr[min_idx] = arr[i];
+            arr[i] = temp;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] data = {64, 25, 12, 22, 11};
+        sort(data);
+        // Output: 11 12 22 25 64
+        for (int val : data) System.out.print(val + " ");
+    }
+}
+🧾 Notebook Points:Java📘 Selection Sort:
+→ Finds minimum in unsorted array and swaps it to the front
+→ In-place algorithm
+
+🔢 Complexity: O(n^2) (Worst, Average, and Best Case)
+✅ Summary Table:🏗️ Algorithm💡 Core Logic⏱️ Time ComplexityBubble SortRepeatedly swap adjacent elementsO($n^2$)Selection SortFind minimum and swap to correct positionO($n^2$)
