@@ -1,0 +1,32 @@
+DSA-0231. Insertion Sort (Incremental Build) 🏗️🧠 Logic:Insertion Sort builds the final sorted array one item at a time. It iterates through the input elements and $\mathbf{takes~each~element}$ and $\mathbf{inserts~it}$ into its correct position within the already $\mathbf{sorted~part}$ of the array (which starts at index 0).It's conceptually similar to how you sort a hand of playing cards.It is an $\mathbf{In-place}$ and $\mathbf{Stable}$ sorting algorithm. It performs exceptionally well on data that is already mostly sorted.📌 Example:List: [12, 11, 13, 5, 6]
+
+Step 1: [12] (Sorted part)
+Step 2: Take 11. Insert before 12. [11, 12]
+Step 3: Take 13. Insert after 12. [11, 12, 13]
+Step 4: Take 5. Shift 13, 12, 11. Insert 5 at start. [5, 11, 12, 13]
+...
+🔤 Java Code:Javapublic class InsertionSort {
+    public static void sort(int[] arr) {
+        int n = arr.length;
+        for (int i = 1; i < n; i++) {
+            int key = arr[i]; // Element to be inserted
+            int j = i - 1;
+            
+            // Move elements of arr[0..i-1], that are greater than key, 
+            // to one position ahead of their current position
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key; // Insert the key at its correct position
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] data = {12, 11, 13, 5, 6};
+        sort(data);
+        // Output: 5 6 11 12 13
+        for (int val : data) System.out.print(val + " "); 
+    }
+}
+🧾 Notebook Points:Java📘
