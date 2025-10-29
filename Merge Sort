@@ -1,0 +1,44 @@
+Merge Sort (Divide and Conquer) 🧩🧠 Logic:Merge Sort is an efficient, comparison-based algorithm that follows the $\mathbf{Divide~and~Conquer}$ strategy.Divide: It repeatedly divides the array into two halves until it has arrays of size 1 (which are inherently sorted).Conquer/Merge: It $\mathbf{merges}$ the smaller sorted arrays back together to produce new, larger sorted arrays until the entire list is merged into one.Merge Sort is generally $\mathbf{Stable}$, but it is NOT In-place as it requires $\mathbf{O(n)~extra~space}$ for the temporary arrays used during the merging process.📌 Example:List: [38, 27, 43, 3]
+
+1. Divide: [38, 27] | [43, 3]
+2. Divide further: [38] | [27] | [43] | [3]
+3. Merge: [27, 38] | [3, 43]
+4. Final Merge: [3, 27, 38, 43]
+🔤 Java Code (Conceptual Merge Sort):Javapublic class MergeSort {
+    // Main function that sorts arr[l..r] using merge()
+    public static void sort(int[] arr, int l, int r) {
+        if (l < r) {
+            // Find the middle point
+            int m = l + (r - l) / 2;
+
+            // Recursively sort first and second halves (Divide)
+            sort(arr, l, m);
+            sort(arr, m + 1, r);
+
+            // Merge the sorted halves (Conquer)
+            merge(arr, l, m, r);
+        }
+    }
+
+    // This function merges two subarrays of arr[].
+    private static void merge(int[] arr, int l, int m, int r) {
+        // 
+        // Implementation logic involves creating temporary arrays (O(n) space)
+        // and comparing elements to place them back into the main array in sorted order.
+    }
+
+    public static void main(String[] args) {
+        int[] data = {38, 27, 43, 3, 9, 82, 10};
+        sort(data, 0, data.length - 1);
+        // Output: 3 9 10 27 38 43 82
+        for (int val : data) System.out.print(val + " "); 
+    }
+}
+🧾 Notebook Points:Java📘 Merge Sort:
+→ Divide and Conquer approach
+→ Divides list until size 1, then merges sorted subarrays
+→ Stable algorithm
+
+🔢 Complexity: O(n log n) (Worst, Average, and Best Case)
+⚠️ Space Complexity: O(n) (Not In-place)
+✅ Summary Table:🏗️ Algorithm💡 Core Logic⏱️ Time Complexity📦 Extra SpaceInsertion SortInsert element into sorted subarrayO($n^2$) / O(n)O(1) (In-place)Merge SortRecursive Divide and MergeO($n \log n$)O(n) (Not In-place)
