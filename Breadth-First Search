@@ -1,0 +1,42 @@
+DSA-0251. Breadth-First Search (BFS) for Graphs 🔍
+🧠 Logic: Breadth-First Search (BFS) is a graph traversal algorithm that explores the graph level by level (or layer by layer). It starts at a source node, then visits all its immediate neighbors, then all the neighbors of those neighbors, and so on.BFS uses a Queue data structure to manage which nodes to visit next. It guarantees finding the $\mathbf{shortest~path}$ (in terms of the number of edges) between the source node and any other reachable node in an unweighted graph.📌 Example:Graph: A -> B, A -> C, B -> D, C -> E
+
+Start at A.
+1. Queue: [A]
+2. Dequeue A, Visit A. Enqueue neighbors (B, C). Queue: [B, C]
+3. Dequeue B, Visit B. Enqueue neighbors (D). Queue: [C, D]
+4. Dequeue C, Visit C. Enqueue neighbors (E). Queue: [D, E]
+...
+Order of visit: A, B, C, D, E
+🤹‍♀️ Java Code (Conceptual BFS):Javaimport java.util.LinkedList;
+import java.util.Queue;
+
+public class BFS {
+    public static void bfsTraversal(int V, ArrayList<ArrayList<Integer>> adj, int startNode) {
+        // Use a Queue to store nodes to be visited
+        Queue<Integer> queue = new LinkedList<>();
+        boolean[] visited = new boolean[V];
+        
+        visited[startNode] = true;
+        queue.add(startNode);
+
+        while (!queue.isEmpty()) {
+            int u = queue.poll(); // Get node from the front
+            System.out.print(u + " ");
+
+            // Get all neighbors of u
+            for (int v : adj.get(u)) {
+                if (!visited[v]) {
+                    visited[v] = true;
+                    queue.add(v); // Add neighbor to the rear
+                }
+            }
+        }
+    }
+    // Note: Graph must be represented (e.g., using Adjacency List from DSA-024)
+}
+🧾 Notebook Points:Java📘 BFS:
+→ Level-by-level traversal
+→ Data Structure: Queue (FIFO)
+
+🔢 Guarantees: Shortest path in unweighted graphs
