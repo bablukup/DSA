@@ -1,0 +1,36 @@
+Depth-First Search (DFS) for Graphs 🌲
+🧠 Logic: Depth-First Search (DFS) is a graph traversal algorithm that explores as far as possible along each branch before backtracking. It goes $\mathbf{deep}$ down one path until it hits a dead end (a node with no unvisited neighbors).DFS typically uses a Stack data structure or, more commonly in recursive programming, the function call stack (Recursion). It is often used for topological sorting, finding connected components, and cycle detection.📌 Example:Graph: A -> B, A -> C, B -> D, C -> E
+
+Start at A.
+1. Visit A. Go to B.
+2. Visit B. Go to D.
+3. Visit D. (Dead end). Backtrack to B.
+4. Backtrack to A. Go to C.
+5. Visit C. Go to E.
+...
+Order of visit: A, B, D, C, E (Example path)
+🤹‍♀️ Java Code (Conceptual Recursive DFS):Javapublic class DFS {
+    public static void dfsTraversal(int u, ArrayList<ArrayList<Integer>> adj, boolean[] visited) {
+        visited[u] = true;
+        System.out.print(u + " ");
+
+        // Recurse for all neighbors
+        for (int v : adj.get(u)) {
+            if (!visited[v]) {
+                dfsTraversal(v, adj, visited);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        // Assume graph 'g' is initialized with V vertices and edges
+        // boolean[] visited = new boolean[g.V];
+        // dfsTraversal(0, g.adj, visited); // Start from node 0
+    }
+}
+🧾 Notebook Points:Java📘 DFS:
+→ Deep traversal down a branch
+→ Data Structure: Stack or Recursion (Function Call Stack)
+
+🔢 Use Cases: Cycle detection, Topological sort
+✅ Summary Table:🏗️ Algorithm💡 Exploration Strategy🛠️ Implementation Data Structure🧭 Key ApplicationBFSLevel by Level (Shallow)QueueShortest path (unweighted)DFSDepth First (Deep)Stack/RecursionCycle detection, Topological sort
