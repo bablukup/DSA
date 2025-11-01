@@ -1,0 +1,35 @@
+2. Dynamic Programming (Optimal Substructure) 🧩
+🧠 Logic: Dynamic Programming (DP) is a powerful algorithmic technique used to solve complex problems by breaking them down into simpler $\mathbf{overlapping~subproblems}$. It stores the results of these subproblems to avoid redundant calculations, a technique called Memoization (Top-down) or Tabulation (Bottom-up).DP is applicable when a problem exhibits two properties:Optimal Substructure: The optimal solution to the problem can be constructed from the optimal solutions of its subproblems.Overlapping Subproblems: The same subproblems are solved repeatedly.DP always $\mathbf{guarantees}$ the globally optimal solution when applicable, but it often has higher space complexity than greedy algorithms due to the storage of subproblem solutions.📌 Example:Problem: Fibonacci Sequence (Calculating Fib(n))
+Naive Recursion: Recalculates Fib(3), Fib(2), etc. multiple times (Overlapping Subproblems).
+DP Approach: Calculate and store Fib(0), Fib(1), Fib(2), ..., up to Fib(n), ensuring each is calculated only once.
+🤹‍♀️ Java Code (Fibonacci with DP - Tabulation):Javapublic class DPFibonacci {
+    public static int fib(int n) {
+        if (n <= 1) return n;
+
+        // 1. Create storage (Table) to save results
+        int[] dp = new int[n + 1];
+        
+        // 2. Base cases (Initialization)
+        dp[0] = 0;
+        dp[1] = 1;
+
+        // 3. Bottom-up calculation (Tabulation)
+        for (int i = 2; i <= n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+
+        return dp[n];
+    }
+
+    public static void main(String[] args) {
+        int n = 7;
+        System.out.println("Fib(" + n + ") is: " + fib(n)); // Output: 13
+    }
+}
+🧾 Notebook Points:Java📘 Dynamic Programming:
+→ Solves complex problems by breaking into OVERLAPPING subproblems
+→ Saves subproblem results to avoid redundant calculation
+
+🔢 Properties: Optimal Substructure & Overlapping Subproblems
+➡️ Techniques: Memoization (Top-down) and Tabulation (Bottom-up)
+✅ Summary Table:🏗️ Algorithm💡 Decision Principle⏱️ Time Complexity🎯 GuaranteeGreedyLocal Best ChoiceUsually Faster$\mathbf{No}$ (Must be proven)Dynamic ProgrammingBuilds upon Optimal SubproblemsOften Slower (but polynomial)$\mathbf{Yes}$ (Guarantees optimal solution)
