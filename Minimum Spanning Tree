@@ -1,0 +1,52 @@
+2. Minimum Spanning Tree (MST) 🌳
+🧠 Logic:A Spanning Tree of a connected, undirected graph is a subgraph that is a tree and connects $\mathbf{all~the~vertices}$ together.A Minimum Spanning Tree (MST) is a spanning tree whose sum of edge weights is the $\mathbf{minimum~possible}$. It's often used in network design to find the cheapest way to connect all network points.Two classic algorithms for finding the MST are:Prim's Algorithm: Starts at an arbitrary node and grows the tree one edge at a time, always adding the cheapest edge that connects the tree to a new node (similar to Dijkstra's, using a $\mathbf{Priority~Queue}$).Kruskal's Algorithm: Builds the tree by selecting edges in increasing order of weight, as long as the edge does not form a cycle with the already selected edges ($\mathbf{Disjoint~Set~Union}$ data structure is commonly used).📌 Example:Graph with nodes A, B, C and edges: A-B (5), A-C (3), B-C (1)
+MST edges: A-C (3) and B-C (1).
+Total Weight of MST: 3 + 1 = 4. (Edge A-B is excluded as it forms a cycle).
+🤹‍♀️ Java Code (Conceptual MST using Kruskal's):Javaimport java.util.Arrays;
+
+// Edge Class
+class Edge implements Comparable<Edge> {
+    int src, dest, weight;
+    @Override
+    public int compareTo(Edge other) {
+        return this.weight - other.weight; // Sort edges by weight
+    }
+}
+
+// Disjoint Set Union (DSU) implementation is required here
+
+public class KruskalsMST {
+    public static void kruskalMST(Edge[] edges, int V) {
+        // 1. Sort all edges by weight
+        Arrays.sort(edges);
+        
+        // 2. Initialize DSU structure (to track cycles)
+        // DSU dsu = new DSU(V); 
+
+        int edgeCount = 0;
+        int i = 0;
+        int minWeight = 0;
+
+        // 3. Iterate through sorted edges
+        while (edgeCount < V - 1 && i < edges.length) {
+            Edge nextEdge = edges[i++];
+            
+            // Check if adding this edge creates a cycle using DSU's find()
+            // if (dsu.find(nextEdge.src) != dsu.find(nextEdge.dest)) {
+                // Add the edge to MST
+                minWeight += nextEdge.weight;
+                edgeCount++;
+                // dsu.union(nextEdge.src, nextEdge.dest); // Union the sets
+            // }
+        }
+        System.out.println("Minimum Cost Spanning Tree Weight: " + minWeight);
+    }
+}
+🧾 Notebook Points:Java📘 MST:
+→ Subgraph that connects all vertices with minimum total edge weight
+→ Used for cost-effective network design
+
+🔢 Algorithms:
+1. Kruskal's: Sort edges, use DSU to prevent cycles.
+2. Prim's: Grows the tree using a Priority Queue.
+✅ Summary Table:🏗️ Algorithm💡 Goal⏱️ Key Data Structure📈 Graph TypeDijkstra'sSingle-Source Shortest PathPriority QueueWeighted, Non-NegativeMSTMinimum Weight to Connect All NodesPriority Queue (Prim's), DSU (Kruskal's)Weighted, Undirected
