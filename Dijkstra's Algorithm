@@ -1,0 +1,62 @@
+DSA-0271. Dijkstra's Algorithm (Shortest Path) 🗺️
+🧠 Logic:Dijkstra's Algorithm is used to find the $\mathbf{shortest~path}$ from a single source node to $\mathbf{all~other~nodes}$ in a graph with non-negative edge weights (costs).It works by using a Priority Queue to repeatedly select the unvisited node with the smallest known distance from the source. It then updates the distance to all of that node's neighbors if a shorter path is found through the current node. This process ensures that when a node is visited, the path to it is guaranteed to be the shortest one.📌 Example:Start at A. Distances: {A: 0, B: ∞, C: ∞}
+1. Visit A (dist 0). Update neighbors: B=2, C=4.
+2. Visit B (dist 2, smallest unvisited). Update C: Path A->B->C (2+1=3) is shorter than A->C (4). C=3.
+3. Visit C (dist 3).
+Final shortest paths: A->B (2), A->C (3).
+🤹‍♀️ Java Code (Conceptual Dijkstra's):Javaimport java.util.PriorityQueue;
+import java.util.Map;
+import java.util.HashMap;
+
+// Pair class to hold (vertex, distance) for PriorityQueue
+class NodeDistance implements Comparable<NodeDistance> {
+    int vertex;
+    int distance;
+    public NodeDistance(int v, int d) { this.vertex = v; this.distance = d; }
+    @Override
+    public int compareTo(NodeDistance other) {
+        return Integer.compare(this.distance, other.distance); // Min Heap logic
+    }
+}
+
+public class Dijkstra {
+    public static Map<Integer, Integer> findShortestPaths(int V, Map<Integer, Map<Integer, Integer>> graph, int start) {
+        // Map to store shortest distance from 'start' to all other nodes
+        Map<Integer, Integer> distances = new HashMap<>();
+        // Min Priority Queue stores (distance, vertex)
+        PriorityQueue<NodeDistance> pq = new PriorityQueue<>();
+
+        // Initialize distances
+        for (int i = 0; i < V; i++) distances.put(i, Integer.MAX_VALUE);
+        distances.put(start, 0);
+        pq.add(new NodeDistance(start, 0));
+
+        while (!pq.isEmpty()) {
+            NodeDistance current = pq.poll();
+            int u = current.vertex;
+            
+            if (current.distance > distances.get(u)) continue; // Already found a shorter path
+
+            // Explore neighbors
+            if (graph.containsKey(u)) {
+                for (Map.Entry<Integer, Integer> neighbor : graph.get(u).entrySet()) {
+                    int v = neighbor.getKey();
+                    int weight = neighbor.getValue();
+                    
+                    int newDist = distances.get(u) + weight;
+                    
+                    if (newDist < distances.get(v)) {
+                        distances.put(v, newDist);
+                        pq.add(new NodeDistance(v, newDist));
+                    }
+                }
+            }
+        }
+        return distances;
+    }
+}
+🧾 Notebook Points:Java📘 Dijkstra's Algorithm:
+→ Finds shortest path from one source to all other nodes
+→ Graph must have NON-NEGATIVE weights
+
+🔢 Implementation: Uses a Priority Queue (Min Heap)
