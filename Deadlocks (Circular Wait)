@@ -1,0 +1,37 @@
+2. Deadlocks (Circular Wait) 🛑
+🧠 Logic:A Deadlock is a state where two or more threads are permanently blocked because each is waiting for the other to release a resource (lock). It's a circular dependency where no thread can proceed.Deadlocks commonly occur when four conditions (the Coffman Conditions) are met simultaneously:Mutual Exclusion: Resources can't be shared (like synchronized locks).Hold and Wait: A thread holds one resource while waiting for another.No Preemption: A resource can only be voluntarily released by the thread holding it.Circular Wait: A circular chain of threads exists, where each thread is waiting for a resource held by the next thread in the chain.The most practical way to prevent deadlocks in Java is to eliminate the Circular Wait condition by enforcing a strict lock ordering (always acquiring locks A before lock B, for example).📌 Example:Thread 1: acquires Lock A, then waits for Lock B.
+Thread 2: acquires Lock B, then waits for Lock A.
+
+Result: Both threads are permanently blocked, waiting for the other.
+🤹‍♀️ Java Code (Conceptual Deadlock Prevention):Javaclass ResourceLocker {
+    private final Object lock1 = new Object();
+    private final Object lock2 = new Object();
+
+    // Deadlock Scenario (If order is inconsistent):
+    // public void methodA() { synchronized(lock1) { synchronized(lock2) { ... } } }
+    // public void methodB() { synchronized(lock2) { synchronized(lock1) { ... } } }
+
+    // Deadlock Prevention (Enforcing Lock Order):
+    public void safeMethodA() {
+        synchronized(lock1) { 
+            // Ensures lock1 is ALWAYS acquired first
+            synchronized(lock2) { 
+                System.out.println("T1 executed safely.");
+            } 
+        }
+    }
+
+    public void safeMethodB() {
+        synchronized(lock1) { // Ensures lock1 is ALWAYS acquired first
+            synchronized(lock2) { 
+                System.out.println("T2 executed safely.");
+            }
+        }
+    }
+}
+🧾 Notebook Points:Java📘 Deadlock:
+→ Permanent blocking of threads due to circular wait for resources
+→ Occurs due to simultaneous occurrence of 4 conditions
+
+🔢 Prevention: Enforce strict lock ordering (eliminate Circular Wait)
+✅ Summary Table:🏗️ Concept💡 Goal🛠️ Mechanism⚠️ DangerSynchronizationEnsure Data Integritysynchronized keyword (Locking)Reduced throughputDeadlockPermanent BlockageCircular Wait dependencySystem halt/unresponsiveness
