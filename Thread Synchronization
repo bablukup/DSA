@@ -1,0 +1,39 @@
+DSA-0281. Thread Synchronization (Coordination) 🤝
+🧠 Logic: Synchronization is the mechanism that controls the access of multiple threads to any shared resource. When two or more threads try to access the same resource simultaneously, it can lead to data inconsistency (Race Condition).Synchronization ensures that only one thread can execute a block of code (the $\mathbf{Critical~Section}$) at a time. This is achieved using locks or monitors. In Java, the primary ways to synchronize are:Synchronized Method: Applying the synchronized keyword to a method locks the entire object.Synchronized Block: Applying the synchronized keyword to a block of code using an object reference as the lock (synchronized (this) or synchronized (someObject)).📌 Example:Javaclass Counter {
+    int count = 0;
+    
+    // Synchronized method guarantees only one thread can run this at a time
+    public synchronized void increment() { 
+        count++;
+    }
+}
+🤹‍♀️ Java Code (Synchronized Block):Javaclass SharedResource {
+    private int value = 0;
+    private final Object lock = new Object(); // Custom lock object
+
+    public void unsafeIncrement() {
+        value++; // Potential for Race Condition
+    }
+
+    public void safeIncrement() {
+        // Only one thread can execute this block at a time
+        synchronized (lock) { 
+            value++;
+        }
+    }
+    
+    public int getValue() {
+        return value;
+    }
+}
+
+public class SynchronizationDemo {
+    // Demonstrating safe vs. unsafe access...
+    // In a real run, safeIncrement will always yield the correct final value.
+}
+🧾 Notebook Points:Java📘 Synchronization:
+→ Controls concurrent access to shared resources
+→ Prevents Race Conditions and Data Inconsistency
+
+🔢 Methods: Synchronized Methods or Synchronized Blocks
+➡️ Goal: Ensure Atomicity (operation completes entirely without interruption)
