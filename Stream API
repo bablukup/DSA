@@ -1,0 +1,37 @@
+2. Stream API (Functional Data Processing) 🌊
+🧠 Logic: The Stream API, introduced in Java 8, is a sequence of elements that supports sequential and parallel $\mathbf{aggregate~operations}$ (like map, filter, reduce, find, etc.) on collections.Streams are $\mathbf{functional~}$ in nature:Lazy: Operations are only performed when a result is requested.Non-modifying: They do not change the source collection (non-destructive).Pipeline: Operations are chained together to form a processing pipeline.A stream pipeline consists of: Source $\rightarrow$ Intermediate Operations (e.g., filter(), map()) $\rightarrow$ Terminal Operation (e.g., collect(), forEach(), reduce()).📌 Example (Filtering a list using a stream):JavaList<String> names = List.of("Ali", "Bob", "Alex");
+
+// Stream pipeline to filter names starting with 'A'
+names.stream()
+     .filter(name -> name.startsWith("A")) // Intermediate operation (uses Lambda)
+     .forEach(System.out::println);      // Terminal operation
+🤹‍♀️ Java Code (Stream Pipeline): Javaimport java.util.List;
+import java.util.stream.Collectors;
+
+public class StreamAPIDemo {
+    public static void main(String[] args) {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8);
+
+        // Calculate the sum of squares of all even numbers
+        int sumOfSquares = numbers.stream()
+            .filter(n -> n % 2 == 0) // 1. Keep only even numbers (2, 4, 6, 8)
+            .map(n -> n * n)         // 2. Square each number (4, 16, 36, 64)
+            .reduce(0, (a, b) -> a + b); // 3. Sum them up (0 is the initial value)
+            // Result: 120
+
+        System.out.println("Sum of Squares of Evens: " + sumOfSquares);
+        
+        // Example using collect:
+        List<Integer> doubled = numbers.stream()
+            .map(n -> n * 2)
+            .collect(Collectors.toList());
+        System.out.println("Doubled List: " + doubled);
+    }
+}
+🧾 Notebook Points:Java📘 Stream API:
+→ Functional way to process collections
+→ Non-modifying (source collection is unchanged)
+→ Pipeline: Source -> Intermediate Ops -> Terminal Op
+
+🔢 Ops: filter(), map(), reduce(), collect(), forEach()
+✅ Summary Table:🏗️ Concept💡 Core Role🛠️ Main Use🧭 Key BenefitLambdaAnonymous FunctionImplementing Functional InterfacesCode ConcisenessStream APIData Processing PipelineAggregation and Transformation of CollectionsParallel processing, Readability
