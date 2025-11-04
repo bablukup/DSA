@@ -1,0 +1,40 @@
+DSA-029
+1. Lambda Expressions (Functional Interface) $\lambda$
+🧠 Logic:A Lambda Expression (or Lambda function) is a short block of code that takes parameters and returns a value. It provides a clear and concise way to represent an $\mathbf{Anonymous~Function}$ (a function without a name).Lambdas are primarily used to provide the implementation for a Functional Interface (an interface with exactly $\mathbf{one~abstract~method}$). This allows Java to adopt a functional programming style.📌 Example (Simplified Syntax):Java// Traditional way:
+/*
+(int a, int b) -> {
+    return a + b;
+}
+*/
+
+// Simplest form of Lambda:
+// (parameters) -> expression_body
+
+(a, b) -> a + b; // Takes two arguments and returns their sum.
+🤹‍♀️ Java Code (Using Lambda with Runnable):Javapublic class LambdaDemo {
+    public static void main(String[] args) {
+        // 1. Traditional Anonymous Inner Class (Verbose)
+        Runnable r1 = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Thread 1 running.");
+            }
+        };
+
+        // 2. Lambda Expression (Concise Implementation of Runnable's run() method)
+        Runnable r2 = () -> {
+            System.out.println("Thread 2 running.");
+        };
+
+        new Thread(r1).start();
+        new Thread(r2).start();
+
+        // 3. Simple Consumer example (Consumer is a Functional Interface)
+        java.util.function.Consumer<String> printer = s -> System.out.println("Message: " + s);
+        printer.accept("Hello Lambda");
+    }
+}
+🧾 Notebook Points:Java📘 Lambda Expressions:
+→ Anonymous function used for concise code
+→ Syntax: (parameters) -> body
+→ Requirement: Used to implement Functional Interfaces (Single Abstract Method)
