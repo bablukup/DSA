@@ -1,4 +1,5 @@
-DSA-0301. Design Patterns (Reusable Solutions) 🏗️
+DSA-030
+1. Design Patterns (Reusable Solutions) 🏗️
 🧠 Logic: Design Patterns are standardized, reusable solutions to common problems encountered during software design. They are not finalized code but rather $\mathbf{templates}$ or best practices that experienced object-oriented developers use to make code more flexible, maintainable, and understandable.Patterns are categorized into three groups:Creational: Deals with object creation mechanisms. (e.g., $\mathbf{Singleton}$, Factory).Structural: Deals with class and object composition. (e.g., $\mathbf{Adapter}$, Decorator).Behavioral: Deals with communication between objects. (e.g., $\mathbf{Observer}$, Strategy).📌 Example (Singleton Pattern - Creational):Java// Goal: Ensure only ONE instance of a class exists throughout the application.
 
 class DatabaseConnection {
