@@ -1,0 +1,14 @@
+2. Socket Programming (Network Communication) 🌐
+🧠 Logic: Socket Programming is a way of writing programs that communicate over a network (like the internet) using Sockets. A socket is essentially one $\mathbf{endpoint}$ of a two-way communication link between two programs running on the network.Java uses the $\mathbf{TCP/IP}$ model, primarily focusing on two types of sockets:ServerSocket: Used on the $\mathbf{server}$ side to wait for and accept incoming client connections.Socket: Used on the $\mathbf{client}$ side to initiate a connection, and also used by the server to handle the communication with the specific client after connection is established.Communication involves using $\mathbf{InputStreams}$ and $\mathbf{OutputStreams}$ obtained from the connected socket.📌 Example:Java// Server Side (Waiting for a client on port 6000)
+ServerSocket serverSocket = new ServerSocket(6000);
+Socket clientSocket = serverSocket.accept(); // Blocks until a client connects
+
+// Client Side (Connecting to the server at localhost:6000)
+Socket socket = new Socket("localhost", 6000);
+🤹‍♀️ Key Concepts:ComponentRoleCommon OperationServerSocketServer Listeneraccept() (Wait for connection)SocketCommunication LinkgetInputStream(), getOutputStream()Port NumberAddress IdentifierSpecifies which application to connect to.🧾 Notebook Points:Java📘 Socket Programming:
+→ Two-way communication over a network using Sockets
+→ Protocols: Based on TCP/IP
+
+🔢 Server: Uses ServerSocket and Socket
+➡️ Client: Uses Socket
+✅ Summary Table:🏗️ Topic💡 Core Concept🛠️ Implementation🎯 Application AreaDesign PatternsProven software templatesSingleton, Factory, Adapter, etc.System Architecture/MaintainabilitySocket ProgrammingNetwork communication endpointServerSocket and Socket classesClient-Server Applications
