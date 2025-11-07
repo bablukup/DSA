@@ -1,0 +1,12 @@
+DSA-031
+1. Load Balancing (Traffic Distribution) 🚦🧠 Logic: Load Balancing is the process of efficiently distributing incoming network traffic across a group of backend servers (a server farm or server pool). The goal is to maximize throughput, minimize response time, and avoid overloading any single server.When a client sends a request, the Load Balancer (LB) receives it first and then forwards it to one of the available servers based on a specific algorithm.Key benefits include high $\mathbf{Availability}$ (if one server fails, others take over) and improved $\mathbf{Scalability}$ (easily add more servers to handle increased traffic).📌 Example (Round Robin):Server Pool: [Server 1, Server 2, Server 3]
+
+1. Request 1 -> Server 1
+2. Request 2 -> Server 2
+3. Request 3 -> Server 3
+4. Request 4 -> Server 1 (Cycle repeats)
+🤹‍♀️ Load Balancing Algorithms: Algorithm Description Scenario Round Robin Distributes requests sequentially and cyclically to each server.Simple, basic distribution.Least ConnectionDirects traffic to the server that currently has the fewest active connections.Best for balancing servers with varied workload capacities.IP HashUses a hash of the client's IP address to determine the server. Ensures the same client always goes to the same server ($\mathbf{Sticky~Sessions}$).Maintaining user session state.🧾 Notebook Points:Java📘 Load Balancing:
+→ Distributes network traffic across multiple servers
+→ Goals: High Availability, Scalability, Performance
+
+🔢 Types: Round Robin, Least Connection, IP Hash
