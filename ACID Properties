@@ -1,0 +1,24 @@
+2. ACID Properties (Database Reliability) 🔒
+🧠 Logic: ACID is an acronym defining four key properties guaranteed by a reliable database transaction system (specifically Relational Database Management Systems - RDBMS). These properties ensure that data is handled reliably and correctly, even during errors or power failures.A $\mathbf{Transaction}$ is a single logical unit of work that must either succeed completely or fail completely.📌 The Four ACID Properties:PropertyDefinitionAnalogyAtomicityThe transaction is treated as a $\mathbf{single,~indivisible}$ unit. It either fully commits or completely aborts (Rollback).Money transfer: either withdrawal AND deposit both happen, or neither happens.ConsistencyThe transaction moves the database from one $\mathbfvalid~state$ to another. Data integrity rules (constraints) are always maintained.A balance field must never be negative.IsolationConcurrent transactions execute $\mathbf{independently}$ and $\mathbf{without~interference}$. It's as if they run one after another.Multiple users updating the same record don't see each other's partial changes.DurabilityOnce a transaction is committed, its changes are $\mathbf{permanent}$ and survive system failures (like crashes or power loss).The committed data is saved to non-volatile storage (disk).🤹‍♀️ Java Code (Conceptual Transaction):Javatry (Connection conn = getConnection()) {
+    conn.setAutoCommit(false); // Start transaction block
+
+    // Atomicity: If this fails, the next step and commit won't run.
+    executeWithdrawal(conn, 100); 
+    
+    // Consistency: Constraints ensure the state remains valid.
+    executeDeposit(conn, 100); 
+
+    conn.commit(); // Durable commit
+} catch (SQLException e) {
+    conn.rollback(); // Atomicity ensures state integrity
+} 
+// Isolation is handled automatically by the RDBMS locking mechanisms.
+🧾 Notebook Points:Java📘 ACID:
+→ Properties guaranteeing reliable database transactions
+
+🔢 Properties:
+1. Atomicity: All or nothing.
+2. Consistency: Maintain integrity rules.
+3. Isolation: Concurrent transactions don't interfere.
+4. Durability: Committed changes are permanent.
+✅ Summary Table:🏗️ Topic💡 Core Concept🛠️ Mechanism🎯 GoalLoad BalancingTraffic DistributionAlgorithms (Round Robin, Least Conn)Scalability & AvailabilityACIDTransaction ReliabilityDatabase Guarantees (Atomicity, etc.)Data Integrity
