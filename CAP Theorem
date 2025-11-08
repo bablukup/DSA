@@ -1,0 +1,10 @@
+DSA-032
+1. CAP Theorem (Distributed Systems Trade-off) ⚖️
+🧠 Logic: The CAP Theorem (Brewer's Theorem) is a fundamental constraint in Distributed Systems. It states that any networked shared-data system can only guarantee $\mathbf{two}$ of the following three properties at the same time:Consistency (C): Every read receives the $\mathbf{most~recent~write}$ or an error. (All nodes see the same data at the same time).Availability (A): Every request receives a $\mathbf{non-error~response}$, without guarantee that the response contains the most recent write. (The system is always operational and responsive).Partition Tolerance (P): The system continues to operate despite an arbitrary number of messages being $\mathbf{dropped}$ (network partition) between nodes.In practice, since network failures (Partitions) are inevitable in a distributed system, you $\mathbf{must~choose}$ between Consistency and Availability (i.e., you choose between CA and CP systems in non-partition scenarios, but must accept P). Most modern NoSQL databases (like Cassandra) prioritize AP (Availability and Partition Tolerance), while traditional RDBMS (like PostgreSQL) prioritize C (Consistency, often leading to temporary unavailability during partitions).📌 Example:Imagine two database nodes, N1 and N2, storing the same user balance.
+If the network link between them fails (Partition):
+
+- CP System (e.g., PostgreSQL in strict mode): N1 and N2 stop accepting writes/reads until the link is restored, ensuring data Consistency. System becomes Unavailable.
+- AP System (e.g., Cassandra): N1 and N2 continue accepting writes/reads, ensuring Availability. Data may temporarily diverge (Inconsistency).
+🤹‍♀️ System Choices: System Type Priority Trade-off Example CP Consistency, Partition ToleranceSacrifices AvailabilityTraditional RDBMSAPAvailability, Partition ToleranceSacrifices ConsistencyCassandra, DynamoDB (NoSQL)🧾 Notebook Points:Java📘 CAP Theorem:
+→ Distributed Systems can guarantee only 2 of 3 properties: Consistency, Availability, and Partition Tolerance.
+→ In reality, P is a must, so you choose C or A.
