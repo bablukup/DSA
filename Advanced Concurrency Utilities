@@ -1,0 +1,20 @@
+2. Advanced Concurrency Utilities (Executors/Futures) ⚙️
+🧠 Logic: Java's java.util.concurrent package provides modern utilities for managing threads more efficiently than manually creating Thread objects and synchronized blocks. Key classes simplify complex threading tasks:ExecutorService: A framework for managing and reusing threads (a $\mathbf{Thread~Pool}$). It separates the task submission from the task execution mechanism. This prevents resource exhaustion from creating too many threads.Future: Represents the $\mathbf{result~of~an~asynchronous~computation}$. When a task is submitted using submit(), an object is returned immediately. This object can later be used to check if the task is complete, or to retrieve its result using the $\mathbf{`get()`}$ method (which blocks until the result is available).📌 Example:Java// Create a fixed-size thread pool
+ExecutorService executor = Executors.newFixedThreadPool(10); 
+
+// Submit a task that returns a result
+Future<Integer> futureResult = executor.submit(() -> {
+    // long computation...
+    return 42;
+}); 
+
+// Later, retrieve the result (this call blocks)
+int result = futureResult.get(); 
+🤹‍♀️ Java Concurrency Components: ComponentRoleMethodExecutorServiceManages a pool of worker threads.execute(), submit()Callable<T>A task that returns a result (T) and can throw an exception.call()FutureHolds the result of an asynchronous task.isDone(), get()🧾 Notebook Points:Java📘 Concurrency Utilities:
+→ Frameworks for efficient thread management
+
+🔢 Key Classes:
+1. ExecutorService: Manages Thread Pools.
+2. Future: Represents the result of an async task.
+3. Callable: Task that returns a result.
+✅ Summary Table:🏗️ Concept💡 Core Role🛠️ Trade-off/Mechanism🎯 ApplicationCAP TheoremDistributed System ConstraintChoose C or A when P occursDatabase Design (RDBMS vs NoSQL)ExecutorServiceThread Pool ManagementSeparates submission from executionEfficient Multithreading
