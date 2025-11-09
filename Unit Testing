@@ -1,0 +1,52 @@
+DSA-033
+1. Unit Testing (JUnit Framework) ✅
+🧠 Logic: Unit Testing is a software testing method where individual units of source code (the smallest testable parts, usually methods or classes) are tested to determine if they are fit for use. The goal is to $\mathbf{isolate}$ each part of the program and show that it is correct.JUnit is the most popular testing framework for Java. It uses annotations to define test methods and test configurations:$\mathbf{`@Test`}$: Marks a method as a test case.$\mathbf{`@BeforeEach`}$: Runs before every test method.$\mathbf{`assertEquals`}$, $\mathbf{`assertTrue`}$: $\mathbf{Assertions}$ used to check if the actual result matches the expected result.📌 Example:Java// Method to be tested:
+public int add(int a, int b) {
+    return a + b;
+}
+
+// Test case using JUnit:
+@Test
+void testAddition() {
+    Calculator calc = new Calculator();
+    // Assertion: Check if add(2, 3) equals 5
+    assertEquals(5, calc.add(2, 3)); 
+}
+🤹‍♀️ Java Code (Conceptual JUnit Class):Javaimport org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+// Class containing the test methods
+public class CalculatorTest {
+
+    // Runs before each test to set up resources
+    @BeforeEach
+    void setup() {
+        // e.g., Initialize common objects
+    }
+
+    @Test
+    void testPositiveAddition() {
+        Calculator calc = new Calculator();
+        // Test Case 1
+        assertEquals(10, calc.add(7, 3), "7 + 3 should equal 10");
+    }
+
+    @Test
+    void testNegativeMultiplication() {
+        Calculator calc = new Calculator();
+        // Test Case 2: Ensure multiplication handles negative numbers correctly
+        assertEquals(-6, calc.multiply(2, -3));
+    }
+    
+    @Test
+    void testExceptionHandling() {
+        // Test Case 3: Verify that an exception is thrown
+        assertThrows(ArithmeticException.class, () -> calc.divide(10, 0));
+    }
+}
+🧾 Notebook Points:Java📘 Unit Testing:
+→ Testing individual code units (methods/classes)
+→ Framework: JUnit (uses annotations)
+
+🔢 Assertions: assertEquals, assertTrue, assertThrows
+➡️ Goal: Isolate errors and ensure code correctness
