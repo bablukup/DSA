@@ -1,0 +1,49 @@
+2. Custom Exceptions (Program-Specific Errors) ⚠️
+🧠 Logic:While Java provides many built-in exceptions (like IOException, NullPointerException), it is often necessary to define $\mathbf{Custom~Exceptions}$ (User-Defined Exceptions) to handle specific business logic errors within an application.To create a custom exception, you must extend one of the existing exception classes:Extend $\mathbf{`Exception`}$: Creates a Checked Exception (must be handled/declared). Use this for recoverable errors.Extend $\mathbf{`RuntimeException`}$: Creates an Unchecked Exception (handling is optional). Use this for programming bugs or non-recoverable errors.📌 Example:Java// Custom Checked Exception (Must be handled by caller)
+class InsufficientFundsException extends Exception {
+    public InsufficientFundsException(String message) {
+        super(message);
+    }
+}
+
+// Method that throws the custom exception
+public void withdraw(int amount) throws InsufficientFundsException {
+    if (amount > balance) {
+        throw new InsufficientFundsException("Account balance is too low.");
+    }
+    // continue withdrawal...
+}
+🤹‍♀️ Java Code (Custom Unchecked Exception):Java// Custom Unchecked Exception (Extends RuntimeException)
+class InvalidInputException extends RuntimeException {
+    public InvalidInputException(String message) {
+        super(message);
+    }
+}
+
+public class CustomExceptionDemo {
+    public static int calculateSquareRoot(int number) {
+        if (number < 0) {
+            // Throwing our custom unchecked exception
+            throw new InvalidInputException("Cannot calculate square root of a negative number: " + number);
+        }
+        return (int) Math.sqrt(number);
+    }
+
+    public static void main(String[] args) {
+        try {
+            System.out.println(calculateSquareRoot(25)); // Output: 5
+            System.out.println(calculateSquareRoot(-10)); 
+            
+        } catch (InvalidInputException e) {
+            // We can catch it, even though it's unchecked
+            System.err.println("Error: " + e.getMessage()); 
+        }
+    }
+}
+🧾 Notebook Points:Java📘 Custom Exceptions:
+→ User-defined exceptions for specific business logic errors
+
+🔢 Types:
+1. Checked: Extend Exception (Must be handled)
+2. Unchecked: Extend RuntimeException (Optional handling)
+✅ Summary Table:🏗️ Topic💡 Core Concept🛠️ Implementation🎯 GoalUnit TestingIsolated code testingJUnit (@Test, assertEquals)Code Quality & Bug IsolationCustom ExceptionsProgram-specific error handlingExtend Exception or RuntimeExceptionClear Error Reporting
