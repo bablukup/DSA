@@ -1,0 +1,17 @@
+DSA-034
+1. JPA and Hibernate (Object-Relational Mapping) 🗄️↔️
+🧠 Logic: JPA (Java Persistence API) is the specification for persisting (storing) Java objects into a relational database. It is the standard interface defined by Java.Hibernate is the most popular $\mathbf{implementation}$ of the JPA specification. It is an ORM (Object-Relational Mapping) tool that bridges the gap between the object-oriented Java world and the relational database world.Goal: Eliminate the need for writing repetitive SQL and manual JDBC code. Hibernate maps Java classes (entities) to database tables, and Java object fields to table columns.📌 Example (JPA Annotation):Java// Marks the Java class as a table (Entity)
+@Entity 
+// Defines the primary key
+@Id 
+// Defines the column name for the field
+@Column(name = "user_name") 
+private String name; 
+
+// Methods like session.save(userObject) automatically generate INSERT statements.
+🤹‍♀️ Key Concepts: TermDescriptionRoleEntityA simple Java class annotated with @Entity.Represents a database table.EntityManagerThe JPA API used to interact with the persistence context.Performs CRUD operations (Create, Read, Update, Delete).Persistence ContextA set of managed entity instances.Caches and manages changes to entities.HQL/JPQLObject-oriented query languages (similar syntax to SQL).Querying based on Entity names and fields.🧾 Notebook Points:Java📘 JPA/Hibernate:
+→ Object-Relational Mapping (ORM)
+→ JPA: Specification; Hibernate: Implementation
+
+🔢 Goal: Map Java Objects (Entities) to Database Tables
+➡️ Eliminates manual JDBC code.
