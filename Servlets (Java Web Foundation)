@@ -1,0 +1,21 @@
+2. Servlets (Java Web Foundation) 🕸️
+🧠 Logic:A Servlet is a Java class used to $\mathbf{extend~the~capabilities}$ of a server, usually a web server. They are the core technology for developing server-side Java web applications.Servlets respond to $\mathbf{client~requests}$ (like an HTTP GET or POST) and generate dynamic responses (like HTML, XML, or JSON). They run inside a Servlet Container (or Web Container), such as Tomcat or Jetty.The Servlet lifecycle (handled by the container) includes:init(): Called once when the Servlet is first loaded.service(): Called for every request (dispatches to doGet(), doPost(), etc.).destroy(): Called once when the Servlet is being unloaded.📌 Example (Responding to a GET request):Java@WebServlet("/hello") // Annotation maps the class to a URL path
+public class HelloServlet extends HttpServlet {
+
+    // Handles HTTP GET requests
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+           throws ServletException, IOException {
+        
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("<h1>Hello from Servlet!</h1>"); // Writes HTML back to the browser
+    }
+}
+🤹‍♀️ Key Servlet Methods:MethodRoleHTTP MethoddoGet()Handles data requests typically from the browser URL bar.GETdoPost()Handles data submissions (e.g., HTML form data).POSTdoPut()Handles requests to update a resource.PUTdoDelete()Handles requests to remove a resource.DELETE🧾 Notebook Points:Java📘 Servlets:
+→ Core technology for server-side Java web apps
+→ Runs inside a Servlet Container (e.g., Tomcat)
+
+🔢 Methods: doGet(), doPost() handle client requests
+➡️ Lifecycle: init(), service(), destroy()
+✅ Summary Table:🏗️ Topic💡 Core Role🛠️ Implementation🎯 Application AreaJPA/HibernateObject-Relational Mapping@Entity, EntityManagerDatabase PersistenceServletsServer-Side Request HandlingHttpServlet (doGet, doPost)Web Application Foundation
