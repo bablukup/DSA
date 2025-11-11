@@ -1,0 +1,19 @@
+DSA-035
+1. JSP (JavaServer Pages) 🖥️
+🧠 Logic:JSP (JavaServer Pages) is a technology used to create $\mathbf{dynamic~web~content}$ by embedding Java code directly into HTML pages. JSPs are compiled into Servlets by the web container (like Tomcat) at runtime, making them an efficient way to separate the presentation logic (HTML) from the business logic (Java code).Goal: Simplify the process of generating HTML by allowing developers to write static HTML and insert dynamic content using special JSP tags. This is often done to simplify the view layer of a web application.📌 Example (JSP Tags):HTML<html>
+    <head><title>JSP Time</title></head>
+    <body>
+        <h1>The time is: <%= new java.util.Date() %></h1>
+        
+        <% 
+            int count = 1;
+            out.println("<p>Counter: " + count + "</p>");
+        %>
+    </body>
+</html>
+🤹‍♀️ Key JSP Components:ComponentTag SyntaxDescriptionExpression<%= ... %>Evaluates a Java expression and writes the result to the output stream.Scriptlet<% ... %>Executes blocks of Java code (variables, loops, conditional logic).Directive<%@ ... %>Provides instructions to the JSP container (e.g., import packages).Action<jsp: ... >Performs actions like including files or forwarding requests.🧾 Notebook Points:Java📘 JSP:
+→ Technology to embed Java code into HTML
+→ Compiled into a Servlet at runtime
+
+🔢 Goal: Separate Presentation (HTML) from Business Logic (Java)
+➡️ Tags: Expression (<%= %>), Scriptlet (<% %>)
