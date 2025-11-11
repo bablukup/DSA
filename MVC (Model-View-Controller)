@@ -1,0 +1,14 @@
+2. MVC (Model-View-Controller) Design Pattern 🏛️
+🧠 Logic:The Model-View-Controller (MVC) is a foundational $\mathbf{architectural~design~pattern}$ used to develop UIs (User Interfaces) by separating an application into three interconnected parts. This pattern aims to isolate development complexity, making code easier to maintain and reuse.Model: Manages the $\mathbf{data}$ and $\mathbf{business~logic}$ of the application (e.g., interacting with the database using JPA/Hibernate).View: Handles the $\mathbf{presentation}$ of the data to the user (e.g., using $\mathbf{JSP}$ or HTML).Controller: Acts as an $\mathbf{intermediary}$ that processes user input, updates the Model, and selects the appropriate View to display the result (e.g., using a $\mathbf{Servlet}$).📌 Example (Web Request Flow):1. Client Request (Browser) -> 
+2. **Controller** (Servlet) receives request.
+3. Controller asks **Model** (Java classes/DAO) to fetch/update data.
+4. Model returns data to Controller.
+5. Controller selects **View** (JSP) and passes data to it.
+6. View renders HTML using the data.
+7. HTML Response -> Client.
+🤹‍♀️ Java Web Implementation:ComponentTypical Java ImplementationRole in Web AppControllerServlets or specialized framework classes (Spring Controller).Request handling, traffic direction.ModelPOJOs, Data Access Objects (DAOs), JPA Entities.Data storage, retrieval, and business rules.ViewJSP, HTML, Thymeleaf, or front-end frameworks (React, Vue).User interface and data visualization.🧾 Notebook Points:Java📘 MVC Pattern:
+→ Architectural pattern separating application concerns
+→ Components: Model (Data/Logic), View (Presentation), Controller (Traffic)
+
+🔢 Goal: Improve modularity, maintainability, and code reuse.
+✅ Summary Table:🏗️ Topic💡 Core Role🛠️ Mechanism🎯 Application AreaJSPPresentation LayerEmbeds Java code in HTMLDynamic UI GenerationMVC PatternApplication ArchitectureSeparates concerns (Model, View, Controller)Scalable Web Development
