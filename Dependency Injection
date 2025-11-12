@@ -1,0 +1,22 @@
+DSA-036
+1. Dependency Injection (DI) 💉
+🧠 Logic:Dependency Injection (DI) is a core software design pattern used to implement Inversion of Control (IoC). It is a technique where the $\mathbf{dependencies}$ (objects needed by a class to function) are $\mathbf{provided~to~the~class}$ by an external framework, rather than the class creating them itself.Goal: Decrease $\mathbf{coupling}$ (dependency) between components, making the code more modular, flexible, and easier to test. If class A needs class B, the DI container (the framework) is responsible for creating B and giving it to A.📌 Example:Java// Traditional (Tight Coupling): The Car is responsible for creating its Engine.
+class Car {
+    private Engine engine = new Engine(); // Car depends on Engine implementation
+}
+
+// DI (Loose Coupling): The Engine is provided to the Car constructor.
+class Car {
+    private Engine engine;
+    
+    // Dependency is Injected via the constructor
+    public Car(Engine engine) { 
+        this.engine = engine; 
+    }
+}
+🤹‍♀️ Types of Dependency Injection:TypeMechanismDescriptionConstructorDependencies passed via the class constructor.Most preferred method, ensures dependency is present at creation.SetterDependencies passed via public setter methods.Optional dependencies, but doesn't guarantee dependency existence.FieldDependencies injected directly into fields using annotations (e.g., @Autowired in Spring).Easiest for developers, but harder to test without the container.🧾 Notebook Points:Java📘 Dependency Injection:
+→ Technique to supply dependencies externally
+→ Implements Inversion of Control (IoC)
+
+🔢 Goal: Reduce Coupling, Increase Modularity and Testability
+➡️ Methods: Constructor, Setter, Field
