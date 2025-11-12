@@ -1,0 +1,16 @@
+2. Spring Framework Basics (IoC Container) 🌱
+🧠 Logic:The Spring Framework is the most popular Java Enterprise framework, providing a comprehensive programming and configuration model for building modern, robust, and scalable applications.Core Component: The IoC Container (Inversion of Control Container, often called the Spring Container) is the heart of the framework. It is responsible for:Creating objects (known as Beans).Configuring those objects (setting properties).Wiring them together (performing Dependency Injection).Managing their entire lifecycle.You define the beans and their dependencies, and the Spring Container handles the rest using annotations (like @Component, @Autowired) or XML configuration.📌 Example (Spring Bean):Java// Annotation marking the class as a component managed by Spring
+@Component
+public class DatabaseService {
+    // ...
+}
+
+// Spring Container creates an instance of DatabaseService 
+// and makes it available for injection elsewhere.
+🤹‍♀️ Key Spring Terms:TermDefinitionRoleBeanAn object that is instantiated, assembled, and managed by the Spring IoC Container.Managed object in the application.IoC ContainerThe core engine that manages the beans' lifecycle and performs DI.Runtime environment for the application objects.@AutowiredAnnotation used to tell Spring where to inject a dependency (perform DI).Marks the target for Dependency Injection.🧾 Notebook Points:Java📘 Spring Framework:
+→ Comprehensive enterprise Java framework
+
+🔢 Core: IoC Container (Manages Beans)
+➡️ Bean: Object managed by the Spring Container
+⚠️ @Autowired: Annotation for performing Dependency Injection
+✅ Summary Table:🏗️ Topic💡 Core Concept🛠️ Goal🎯 Framework ExampleDIExternal provision of dependenciesReduce CouplingConstructor InjectionSpring FrameworkIoC Container managementBuild scalable Java applicationsManages application Beans
