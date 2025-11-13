@@ -1,0 +1,18 @@
+DSA-037
+1. Spring Boot (Simplifying Spring) ⚡
+🧠 Logic:Spring Boot is an extension of the Spring Framework that aims to simplify the setup and configuration of Spring applications, especially for building $\mathbf{microservices}$ and $\mathbf{RESTful~APIs}$.Goal: Get Spring applications running with minimal configuration and setup time. It achieves this through:Auto-configuration: Automatically configures the application based on the dependencies (JARs) you add to your project (e.g., if you add the H2 database dependency, Spring Boot automatically configures the data source).Embedded Server: It includes an $\mathbf{embedded~Tomcat}$ (or Jetty/Undertow) server, so you don't need to deploy a WAR file to a separate application server.Starter Dependencies: Provides easy "starter" POM files (e.g., spring-boot-starter-web) that bundle common dependencies needed for a specific type of development.📌 Example:Javaimport org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+// This single annotation enables auto-configuration, component scanning, etc.
+@SpringBootApplication 
+public class Application {
+    public static void main(String[] args) {
+        // Launches the application, starts the embedded server
+        SpringApplication.run(Application.class, args); 
+    }
+}
+🤹‍♀️ Key Spring Boot Features:FeatureDescriptionBenefitStartersDependency bundles (e.g., web, data-jpa).Reduces build complexity.Embedded ServerTomcat/Jetty included and automatically configured.Simplifies deployment (JAR file deployment).ActuatorProvides production-ready features (metrics, health checks).Monitoring and management.@SpringBootApplicationCombines @Configuration, @EnableAutoConfiguration, and @ComponentScan.Single point of configuration.🧾 Notebook Points:Java📘 Spring Boot:
+→ Extension of Spring to simplify setup and configuration
+→ Features: Auto-configuration, Embedded Server, Starter Dependencies
+
+🔢 Goal: Rapid application development and easy deployment
