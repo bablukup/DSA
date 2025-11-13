@@ -1,0 +1,30 @@
+2. RESTful Services (API Architecture) 🌐
+🧠 Logic:REST (Representational State Transfer) is an architectural style for designing distributed systems, primarily web services ($\mathbf{APIs}$). A service adhering to this style is called RESTful.Goal: Create simple, scalable, and stateless communication using standard $\mathbf{HTTP~methods}$ to interact with resources (which are identified by $\mathbf{URLs}$).Key REST principles:Stateless: The server does not store client session information between requests.Resource-Based: Everything is treated as a resource (e.g., /users, /products/1).Use HTTP Methods: Use standard HTTP verbs to perform CRUD operations.📌 Example (Mapping HTTP Methods to CRUD):HTTP MethodCRUD OperationDescriptionGETReadRetrieve a resource or a collection of resources.POSTCreateSubmit data to create a new resource.PUT/PATCHUpdateUpdate an existing resource.DELETEDeleteRemove a resource.🤹‍♀️ Java Code (Spring Boot REST Controller):Javaimport org.springframework.web.bind.annotation.*;
+
+// Marks the class as a REST controller
+@RestController 
+// Base URL path
+@RequestMapping("/api/users") 
+public class UserController {
+    
+    // Handles GET /api/users
+    @GetMapping 
+    public List<User> getAllUsers() {
+        // ... return list of users
+        return userService.findAll();
+    }
+    
+    // Handles POST /api/users
+    @PostMapping 
+    public User createUser(@RequestBody User newUser) {
+        // @RequestBody maps incoming JSON/XML to the User object
+        return userService.save(newUser);
+    }
+}
+🧾 Notebook Points:Java📘 RESTful Services:
+→ Architectural style for building web APIs
+→ Principles: Stateless, Resource-Based (URLs)
+
+🔢 Key Verbs (CRUD): GET, POST, PUT, DELETE
+➡️ Data Format: Typically JSON
+✅ Summary Table:🏗️ Topic💡 Core Concept🛠️ Mechanism🎯 Application AreaSpring BootSimplification of SpringAuto-configuration, Embedded ServerRapid API/Microservice DevelopmentRESTful ServicesAPI Design ArchitectureHTTP Methods mapped to resourcesStandardized Web Communication
